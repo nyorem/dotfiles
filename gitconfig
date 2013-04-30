@@ -1,0 +1,24 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+[user]
+	name = Jocelyn MEYRON
+	email = Jocelyn.Meyron@Ensimag.imag.fr
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  	type = cat-file -t
+  	dump = cat-file -p
+[core]
+	autocrlf = input
+	safecflf = true
+	editor = vim
+[diff]
+   renames = true
+[push]
+   default = current
