@@ -5,7 +5,7 @@
 	ui = auto
 [user]
 	name = Jocelyn MEYRON
-	email = Jocelyn.Meyron@Ensimag.imag.fr
+	email = Jocelyn.Meyron@ensimag.grenoble-inp.fr
 [alias]
 	ci = commit
 	co = checkout
