@@ -1,0 +1,16 @@
+set pipe-text/html="lynx --display_charset=utf-8 -dump -force_html /dev/stdin"
+set ttycharset=utf-8
+set sendcharsets=utf-8
+set encoding=8bit
+
+account gmail {
+    set folder=imaps://jmeyron@imap.gmail.com
+    set record=+Sent
+
+    set smtp-use-starttls
+    set smtp=smtp://smtp.gmail.com:587
+    set smtp-auth=login
+    set smtp-auth-user=jmeyron@gmail.com
+    set from="jmeyron@gmail.com (MEYRON Jocelyn)"
+}
+

@@ -22,3 +22,5 @@
    renames = true
 [push]
    default = current
+[hooks]
+    senderemail = jmeyron@gmail.com
