@@ -1,3 +1,6 @@
+# z
+. $fish_function_path/z.fish
+
 # Aliases
 alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
 
