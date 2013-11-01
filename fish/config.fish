@@ -17,6 +17,7 @@ set MANPATH /opt/local/share/man $MANPATH # man macports
 
 # Variables
 set MATLAB_USE_USERWORK 1
+set EDITOR vim
 
 # Colorations lors d'un ls
 eval (dircolors -c ~/dotfiles/dircolors/solarized/dircolors.ansi-dark | sed 's/>&\/dev\/null$//')
