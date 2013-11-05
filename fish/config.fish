@@ -6,6 +6,7 @@ alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
 alias port="sudo port"
 alias puni="port uninstall inactive"
 alias pc="port clean installed"
+alias ...="cd ../../"
 
 # Path
 set PATH usr/local/gnat/bin $PATH # gnat
