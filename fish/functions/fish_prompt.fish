@@ -1,18 +1,14 @@
-function _git_branch_name
-  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
-end
+function parse_git_branch
+  set -l branch (git branch ^/dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
+  set -l git_diff (git diff)
 
-function _git_status_symbol
-  set -l git_status (git status --porcelain ^/dev/null)
-  if test -n "$git_status"
-    # Is there anyway to preserve newlines so we can reuse $git_status?
-    if git status --porcelain ^/dev/null | grep '^.[^ ]' >/dev/null
-      echo '*' # dirty
-    else
-      echo '#' # all staged
-    end
+  set fish_git_dirty_color red
+  set fish_git_not_dirty_color blue
+
+  if test -n "$git_diff"
+    echo (set_color "$fish_git_dirty_color")$branch(set_color normal)
   else
-    echo    '' # clean
+    echo (set_color "$fish_git_not_dirty_color")$branch(set_color normal)
   end
 end
 
@@ -30,9 +26,9 @@ function fish_prompt
   printf '%s' (prompt_pwd)
   set_color normal
 
-  if test -n (_git_branch_name)(_git_status_symbol)
-    printf ' (%s)' (_git_branch_name)(_git_status_symbol)
-    set_color red
+  if test -d .git
+    set_color normal
+    printf ' (%s)' (parse_git_branch)
   end
 
   printf ' $ '
