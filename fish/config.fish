@@ -3,9 +3,9 @@
 
 # Aliases
 alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
-alias port="sudo port"
-alias puni="port uninstall inactive"
-alias pc="port clean installed"
+alias psu="sudo port selfupdate"
+alias puni="sudo port uninstall inactive"
+alias pc="sudo port clean installed"
 alias ...="cd ../../"
 
 # Path
