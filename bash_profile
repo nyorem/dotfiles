@@ -44,9 +44,10 @@ alias freecell="wine /Users/Jocelyn/.wine/drive_c/Program\ Files/Windows\ Games/
 alias v="cd /Users/Jocelyn/.wine/drive_c/Program\ Files/VVVVVV; wine VVVVVV.exe"
 
 export EDITOR=vim
+export GOPATH="$HOME/go"
 
 # Quelques trucs symapthiques
-fortune -e | cowsay -n
-echo
+# fortune -e | cowsay -n
+# echo
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

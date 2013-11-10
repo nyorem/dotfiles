@@ -1,0 +1,57 @@
+[general]
+ui = TTY.TTYUI
+accounts = JocelynMeyron, Imag
+pythonfile=~/.mutt/offlineimap.py
+fsync = False
+
+[Account JocelynMeyron]
+localrepository = JocelynMeyron-Local
+remoterepository = JocelynMeyron-Remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository JocelynMeyron-Local]
+type = Maildir
+localfolders = ~/.mail/jmeyron-gmail.com
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+                            'sent':    '[Gmail]/Sent Mail',
+                            'flagged': '[Gmail]/Starred',
+                            'trash':   '[Gmail]/Trash',
+                            'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository JocelynMeyron-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = jmeyron@gmail.com
+remotepasseval = get_keychain_pass(account="jmeyron@gmail.com", server="imap.gmail.com")
+realdelete = no
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/All Mail':  'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             '[Gmail]/Important',
+                                             '[Gmail]/Spam',
+                                             ]
+
+[Account Imag]
+localrepository = Imag-Local
+remoterepository = Imag-Remote
+status_backend = sqlite
+
+[Repository Imag-Local]
+type = Maildir
+localfolders = ~/.mail/imag
+
+[Repository Imag-Remote]
+maxconnections = 1
+type = IMAP
+remotehost = etu-ensimag.mail.grenet.fr
+remoteuser = meyronj@ensimag.grenoble-inp.fr
+remoteport = 993
+remotepasseval = get_keychain_pass(account="meyronj@ensimag.grenoble-inp.fr", server="etu-ensimag.mail.grenet.fr")
+ssl = yes
+folderfilter = lambda foldername: foldername not in ['Emailed Contacts', 'Contacts']
