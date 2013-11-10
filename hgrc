@@ -1,0 +1,12 @@
+[ui]
+username = MEYRON Jocelyn <Jocelyn.Meyron@ensimag.grenoble-inp.fr>
+editor = vim
+
+[extensions]
+color =
+graphlog =
+hgext.bookmarks =
+hggit = ~/libs/hg-git/hggit
+
+[alias]
+clog = glog --style compact

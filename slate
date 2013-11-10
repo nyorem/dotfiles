@@ -2,6 +2,9 @@
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
 
 # Abstract positions
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
@@ -48,3 +51,7 @@ bind esc:cmd hint
 
 # Resizing grid
 bind g:cmd grid padding:5 0:6,3
+
+# Relaunching Slate
+alias hyper ctrl;shift;alt;cmd
+bind s:${hyper} relaunch

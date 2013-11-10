@@ -18,7 +18,6 @@ set -x PATH /opt/local/libexec/gnubin $PATH # coreutils -> ls colors
 set -x PATH /usr/local/texlive/2013/bin/universal-darwin $PATH # TexLive 2013
 set -x PATH HOME/.rvm/bin $PATH # Add RVM to PATH for scripting
 set -x PATH /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin $PATH # pip
-set -x PATH $GOROOT/bin $PATH
 set -x MANPATH /opt/local/share/man $MANPATH # man macports
 
 # Variables

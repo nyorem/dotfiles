@@ -158,13 +158,13 @@ set editor = "vim"                       # use vim to compose
 ##############
 ### GMAIL ####
 ##############
-set from     = "jmeyron@gmail.com"
+# set from     = "jmeyron@gmail.com"
 set sendmail = "/opt/local/bin/msmtp -a jmeyron"
 
 ##############
 #### IMAG ####
 ##############
-# set from     = "meyronj@ensimag.grenoble-inp.fr"
+set from     = "Jocelyn.Meyron@ensimag.grenoble-inp.fr"
 # set sendmail = "/opt/local/bin/msmtp -a imag"
 
 set sendmail_wait = 0
