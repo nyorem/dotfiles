@@ -1,3 +1,3 @@
 function mutt
-    bash --login -c 'cd ~/Desktop; /opt/local/bin/mutt' $argv;
+    bash --login -c 'cd ~/Desktop; /usr/local/bin/mutt' $argv;
 end

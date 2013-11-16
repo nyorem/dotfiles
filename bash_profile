@@ -2,17 +2,14 @@
 set -o vi
 
 #Variables d'environnement
-export PATH=/usr/local/mips-elf-linux-cep/bin:$PATH #binutils
-export PATH=/usr/local/bin:$PATH #ghdl
+# export PATH=/usr/local/mips-elf-linux-cep/bin:$PATH #binutils
+export PATH=/usr/local/bin:$PATH #brew
 export PATH=/usr/local/gnat/bin:$PATH #gnat
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export MANPATH=/opt/local/share/man:$MANPATH #man
-export PATH=/Users/Jocelyn/Qt5.0.1/5.0.1/clang_64/bin:$PATH #Qt
 export PATH=$HOME/bin:$PATH # my bin
 
 # bash-completion
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
 
 # Couleurs du préfixe du terminal
@@ -37,17 +34,10 @@ alias g++="/usr/bin/g++" # Idem
 alias skim="open /Applications/Skim.app"
 alias vi="vim"
 
-# jeux
-alias sol="wine /Users/Jocelyn/.wine/drive_c/Program\ Files//Windows\ Games/sol.exe"
-alias mine="wine /Users/Jocelyn/.wine/drive_c/Program\ Files/Windows\ Games/Minesweeper\ XP/winmine.exe"
-alias freecell="wine /Users/Jocelyn/.wine/drive_c/Program\ Files/Windows\ Games/freecell.exe"
-alias v="cd /Users/Jocelyn/.wine/drive_c/Program\ Files/VVVVVV; wine VVVVVV.exe"
-
 export EDITOR=vim
-export GOPATH="$HOME/go"
 
 # Quelques trucs symapthiques
-# fortune -e | cowsay -n
-# echo
+fortune -e | cowsay -n
+echo
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
