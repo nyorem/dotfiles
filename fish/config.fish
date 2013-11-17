@@ -7,7 +7,7 @@ alias evince="skim"
 alias ...="cd ../../"
 
 # Path
-set -x PATH /usr/local/gnat/bin $PATH # gnat
+# set -x PATH /usr/local/gnat/bin $PATH # gnat
 set -x PATH /usr/local/bin $PATH # brew
 set -x PATH /usr/local/sbin $PATH # brew
 set -x PATH $HOME/bin $PATH # my bin
@@ -21,6 +21,7 @@ set -x MANPATH /usr/local/share/man $MANPATH
 # Variables
 set -x MATLAB_USE_USERWORK 1
 set -x EDITOR vim
+set -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
 
 # Colorations lors d'un ls
 eval (gdircolors -c ~/dotfiles/dircolors/solarized/dircolors.ansi-dark | sed 's/>&\/dev\/null$//')
