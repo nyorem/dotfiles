@@ -17,6 +17,7 @@ set -x PATH $HOME/.rvm/gems/ruby-2.0.0-p247/bin $PATH # rvm
 
 # Manpath
 set -x MANPATH /usr/local/share/man $MANPATH
+set -x MANPATH /usr/share/man $MANPATH
 
 # Variables
 set -x MATLAB_USE_USERWORK 1

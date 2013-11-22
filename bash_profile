@@ -1,11 +1,10 @@
-# Vi mode
-set -o vi
-
 #Variables d'environnement
 # export PATH=/usr/local/mips-elf-linux-cep/bin:$PATH #binutils
 export PATH=/usr/local/bin:$PATH #brew
 export PATH=/usr/local/gnat/bin:$PATH #gnat
 export PATH=$HOME/bin:$PATH # my bin
+export MANPATH=/usr/share/man:$MANPATH
+export MANPATH=/usr/local/share/man:$MANPATH
 
 # bash-completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -13,24 +12,22 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # Couleurs du préfixe du terminal
-NM="\[\033[0;38m\]" 
-HI="\[\033[0;37m\]" 
-HII="\[\033[0;36m\]" 
+NM="\[\033[0;38m\]"
+HI="\[\033[0;37m\]"
+HII="\[\033[0;36m\]"
 SI="\[\033[0;33m\]"
 IN="\[\033[0m\]"
 
-# Allure du prompt 
+# Allure du prompt
 export PS1="$NM> $HII\u: $SI\w$NM $ $IN"
 # ancien : export PS1="$NM[$HI\u@$HII\h:$SI\w $NM] $IN"
- 
+
 # alias
+alias l="ls"
 alias ls="ls -G"
 alias ll="ls -lh"
 alias la="ls -A"
 alias gnatmake="gnatmake -O3 -gnato -fstack-check" # Options de compilation
-alias gdb="/usr/bin/gdb -q" # Fourni avec OSX
-alias gcc="/usr/bin/gcc" # Idem
-alias g++="/usr/bin/g++" # Idem
 alias skim="open /Applications/Skim.app"
 alias vi="vim"
 

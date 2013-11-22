@@ -1,3 +1,3 @@
-function show
-        defaults write com.apple.Finder AppleShowAllFiles FALSE && killall Finder
+function unshow
+        defaults write com.apple.Finder AppleShowAllFiles FALSE; and killall Finder
 end

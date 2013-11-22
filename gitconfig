@@ -12,15 +12,15 @@
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  	type = cat-file -t
-  	dump = cat-file -p
+	type = cat-file -t
+	dump = cat-file -p
 [core]
 	autocrlf = input
 	safecflf = true
 	editor = vim
 [diff]
-   renames = true
+	renames = true
 [push]
-   default = current
+	default = current
 [hooks]
-    senderemail = jmeyron@gmail.com
+	senderemail = jmeyron@gmail.com
