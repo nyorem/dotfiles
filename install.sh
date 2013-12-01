@@ -80,3 +80,10 @@ ln -s $HERE/mail/Equifax_Secure_CA.cert $HOME/.mutt/Equifax_Secure_CA.cert
 ln -s $HERE/mail/colors $HOME/.mutt/colors
 echo
 
+echo "bin"
+if [ -d $HOME/bin ]; then
+        mv -v $HOME/bin $HERE/backup/
+fi
+ln -s $HERE/bin $HOME/bin
+echo
+

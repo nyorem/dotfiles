@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+SCRIPT="$HOME/bin/ade2ics.pl"
+
+if ! [ -f $SCRIPT ]; then
+    echo "Script ade2ics.pl introuvable"
+    exit 0
+fi
+
+perl $SCRIPT -s Ensimag -u http://ade52-inpg.grenet.fr/ade/ \
+   -l voirIMATEL -p imatel -y 'ENSIMAG2013-2014' \
+   -n 187,188,190,132,75,202,206,233,234,253,116,120,118,183,184,174,170,114,112,166,167,168,153,223,215 > EDT.ics

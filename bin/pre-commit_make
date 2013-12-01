@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo '-- Attempting to build --'
+
+echo '-- Cleaning project --'
+make -s clean
+echo '-- Cleaning done --'
+
+if [ -f Makefile ]; then
+    make -s
+
+    if [ $? -eq 0 ]; then
+        echo '-- Build succeeded --'
+    else
+        echo '-- Build failed --'
+        exit 1
+    fi
+else
+    echo '-- Makefile not found ! --'
+    exit 1
+fi
+
