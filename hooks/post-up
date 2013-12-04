@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+# Post-hook for rcm
+# Symlink bin directory
+
+ln -s $HOME/dotfiles/bin $HOME/bin
+

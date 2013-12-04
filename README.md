@@ -1,19 +1,30 @@
-# My personal dotfiles
+# My dotfiles
 
-## DESCRIPTION :
+## What's in it ?
 
-- bash_profile : personal configuration for bash
-- dircolors : dircolors files (molokai, solarized and original) for OSX
-- fish : fish shell config files
-- gitconfig : personal configuration of git
+### Shell
+- bash_profile : bash config
+- config/fish : fish config files
+
+### VCS
+- gitconfig : git config
+- hgrc : hg config
+
+### OSX
 - iterm : colors for iTerm2 (tomorrow, solarized and molokai)
-- mail : mutt configuration (offlineimap, msmtp, urlview)
 - slate : slate config file
-- tmux.conf : configuration for tmux
+
+### Others
+- dircolors : dircolors files (molokai, solarized and original) for OSX
+- bin : personal binaries
+- offlineimaprc / msmtprc / urlviw / mutt : mutt configuration
+- tmux.conf : tmux config
+- rcrc / hooks : rcm config
 
 -----
 
 ## HOW TO INSTALL :
 
-Simply run `cd && git clone https://github.com/nyorem/dotfiles && ./install.sh`
+- Install `rcm` : `brew tap mike-burns/rcm && brew install rcm` on OSX
+- Run `cd && git clone https://github.com/nyorem/dotfiles && rcup -d dotfiles -x "README.md bin iterm dircolors" -v`
 
