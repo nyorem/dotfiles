@@ -17,7 +17,7 @@
 ### Others
 - dircolors : dircolors files (molokai, solarized and original) for OSX
 - bin : personal binaries
-- offlineimaprc / msmtprc / urlviw / mutt : mutt configuration
+- offlineimaprc / msmtprc / urlview / mutt : mutt configuration (see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/))
 - tmux.conf : tmux config
 - rcrc / hooks : rcm config
 
@@ -25,6 +25,7 @@
 
 ## HOW TO INSTALL :
 
-- Install `rcm` : `brew tap mike-burns/rcm && brew install rcm` on OSX
-- Run `cd && git clone https://github.com/nyorem/dotfiles && rcup -d dotfiles -x "README.md bin iterm dircolors" -v`
+- Dependencies : `brew tap mike-burns/rcm && brew install rcm` on OSX
+- Clone : `cd && git clone https://github.com/nyorem/dotfiles`
+- Symlink : `rcup -d dotfiles -x "README.md bin iterm dircolors" -v`
 
