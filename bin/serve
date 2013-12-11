@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+# Launch nginx and php-cgi
+
+# Launch nginx
+nginx -s stop 2> /dev/null
+nginx
+
+# Launch php
+php-cgi -b127.0.0.1:9000 -q
