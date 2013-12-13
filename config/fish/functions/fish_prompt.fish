@@ -29,13 +29,10 @@ function fish_prompt
 	# z
 	z --add "$PWD"
 
-	# [tasks] 'user' at 'dir' (branch) $
-	set_color blue
-	printf '[%s]' (tasks)
+	# [tasks] 'dir' (branch) λ
 	set_color yellow
-	printf ' %s' (whoami)
+	printf '[%s] ' (tasks)
 	set_color normal
-	printf ' at '
 
 	set_color $fish_color_cwd
 	printf '%s' (prompt_pwd)
@@ -54,7 +51,7 @@ function fish_prompt
 		printf ' (%s)' (hg_prompt)
 	end
 
-	printf ' $ '
+	printf ' λ '
 	set_color normal
 
 	if test $VIRTUAL_ENV
