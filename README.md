@@ -13,6 +13,7 @@
 ### OSX
 - iterm : colors for iTerm2 (tomorrow, solarized and molokai)
 - slate : slate config file
+- keyremap4macbook : keyboard behaviour customisation
 
 ### Others
 - dircolors : dircolors files (molokai, solarized and original) for OSX

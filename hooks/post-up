@@ -1,6 +1,10 @@
 #! /usr/bin/env bash
 # Post-hook for rcm
-# Symlink bin directory
+# Symlink :
+#	-> bin directory
+#	-> configuration for KeyRemap4MacBook
 
-ln -s $HOME/dotfiles/bin $HOME/bin
+ln -sv $HOME/dotfiles/bin $HOME/bin
+
+ln -sv $HOME/dotfiles/keyremap4macbook/private.xml $HOME/Library/Application\ Support/KeyRemap4MacBook/private.xml
 
