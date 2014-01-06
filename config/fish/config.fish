@@ -5,6 +5,16 @@
 alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
 alias ...="cd ../../"
 
+# Projet GL
+set -x PATH $HOME/bin/ProjetGL/global/bin $PATH
+set -x PATH $HOME/projets/gl/src/main/bin $PATH
+set -x PATH $HOME/projets/gl/src/test/script $PATH
+set -x PATH $HOME/projets/gl/src/test/script/launchers $PATH
+set -x PATH $HOME/bin/ProjetGL/apache-maven-3.1.1/bin $PATH
+set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/
+
+alias gldoc="evince $HOME/dotfiles/bin/ProjetGL/global/doc/main_etu.pdf"
+
 # PATH
 # set -x PATH /usr/local/gnat/bin $PATH # gnat
 set -x PATH /usr/local/bin $PATH # brew
