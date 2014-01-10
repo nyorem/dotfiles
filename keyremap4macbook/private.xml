@@ -16,6 +16,10 @@
     <name>KeyCode::VK_OPEN_URL_APP_MacVim</name>
     <url>file:///Applications/MacVim.app</url>
   </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_iTunes</name>
+    <url>file:///Applications/iTunes.app</url>
+  </vkopenurldef>
 
   <item>
     <!--
@@ -114,6 +118,16 @@
         __KeyToKey__
         KeyCode::T, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
         KeyCode::VK_OPEN_URL_APP_iTerm,
+      </autogen>
+    </item>
+
+    <item>
+      <name>Hyper+I to open iTunes ("I" for "iTunes")</name>
+      <identifier>com.jasonrudolph.hyper_i</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::I, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::VK_OPEN_URL_APP_iTunes,
       </autogen>
     </item>
   </item>

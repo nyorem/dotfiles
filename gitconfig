@@ -12,6 +12,7 @@
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	oops = reset --soft HEAD^1
 	type = cat-file -t
 	dump = cat-file -p
 [core]
