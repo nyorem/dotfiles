@@ -11,10 +11,10 @@
 	co = checkout
 	st = status
 	br = branch
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue(%an)%Creset' --abbrev-commit --date=relative
 	oops = reset --soft HEAD^1
-	type = cat-file -t
-	dump = cat-file -p
+	grep = grep -n
+	pp = !sh -c 'git pull && git push'
 [core]
 	autocrlf = input
 	safecflf = true
@@ -23,5 +23,3 @@
 	renames = true
 [push]
 	default = current
-[hooks]
-	senderemail = Jocelyn.Meyron@ensimag.grenoble-inp.fr
