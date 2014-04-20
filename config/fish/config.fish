@@ -1,22 +1,24 @@
 # sjl z (inspired by rupa z)
 . $fish_function_path/z.fish
 
+# vi-mode
+# . $fish_function_path/vi-mode.fish
+# function fish_user_key_bindings
+# 	vi_mode_insert
+# end
+
 # ALIASES
 alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
 alias ...="cd ../../"
 
-# Projet GL
-# set -x PATH $HOME/bin/ProjetGL/global/bin $PATH
-# set -x PATH $HOME/projets/gl/src/main/bin $PATH
-# set -x PATH $HOME/projets/gl/src/test/script $PATH
-# set -x PATH $HOME/projets/gl/src/test/script/launchers $PATH
-# set -x PATH $HOME/bin/ProjetGL/apache-maven-3.1.1/bin $PATH
-
 # PATH
+# To remove
 # set -x PATH /usr/local/gnat/bin $PATH # gnat
+set -x PATH /Developer/NVIDIA/CUDA-5.5/bin $PATH
+set -x DYLD_LIBRARY_PATH /Developer/NVIDIA/CUDA-5.5/lib $DYLD_LIBRARY_PATH
+
 set -x PATH /usr/local/bin $PATH # brew
 set -x PATH /usr/local/sbin $PATH # brew
-set -x PATH (brew --prefix josegonzalez/php/php54)/bin $PATH # brew php
 set -x PATH $HOME/bin $PATH # my bin
 set -x PATH /usr/local/texlive/2013/bin/universal-darwin $PATH # TexLive 2013
 set -x PATH HOME/.rvm/bin $PATH # Add RVM to PATH for scripting

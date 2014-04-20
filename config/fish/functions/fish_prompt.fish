@@ -51,8 +51,9 @@ function fish_prompt
 		printf ' (%s)' (hg_prompt)
 	end
 
+	# printf " %s" $vi_mode
+	# set_color normal
 	printf ' λ '
-	set_color normal
 
 	if test $VIRTUAL_ENV
 		printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)

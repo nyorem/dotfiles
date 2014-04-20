@@ -6,7 +6,7 @@ editor = vim
 color =
 graphlog =
 hgext.bookmarks =
-hggit = ~/sandbox/hg-git/hggit
+hggit = ~/repos/vcs/hg-git/hggit
 hgflow =
 
 [alias]
