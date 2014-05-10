@@ -12,11 +12,6 @@ alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
 alias ...="cd ../../"
 
 # PATH
-# To remove
-# set -x PATH /usr/local/gnat/bin $PATH # gnat
-set -x PATH /Developer/NVIDIA/CUDA-5.5/bin $PATH
-set -x DYLD_LIBRARY_PATH /Developer/NVIDIA/CUDA-5.5/lib $DYLD_LIBRARY_PATH
-
 set -x PATH /usr/local/bin $PATH # brew
 set -x PATH /usr/local/sbin $PATH # brew
 set -x PATH $HOME/bin $PATH # my bin

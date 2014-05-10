@@ -5,6 +5,10 @@
     <url>file:///Applications/Google%20Chrome.app</url>
   </vkopenurldef>
   <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Firefox</name>
+    <url>file:///Applications/Firefox.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_iTerm</name>
     <url>file:///Applications/iTerm.app</url>
   </vkopenurldef>
@@ -82,12 +86,12 @@
     </item>
 
     <item>
-      <name>Hyper+B to open Chrome ("B" for "Browser")</name>
+      <name>Hyper+B to open the web browser ("B" for "Browser")</name>
       <identifier>com.jasonrudolph.hyper_b</identifier>
       <autogen>
         __KeyToKey__
         KeyCode::B, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-        KeyCode::VK_OPEN_URL_APP_Chrome,
+        KeyCode::VK_OPEN_URL_APP_Firefox,
       </autogen>
     </item>
 

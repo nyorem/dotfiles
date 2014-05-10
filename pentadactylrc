@@ -1,0 +1,54 @@
+"1.1
+
+loadplugins '\.(js|penta)$'
+group user
+
+" Colorscheme
+colorscheme solarized-light
+
+" Mappings
+" Scroll more
+map -builtin j 5j
+map -builtin k 5k
+
+" Swap d/D
+nmap -builtin d D
+nmap -builtin D d
+
+" Switch to fullscreen
+map ,f :set<Space>fullscreen!<CR>
+
+" Reload rc
+map ,s :source ~/.pentadactylrc<CR>
+
+" Open addons manager
+nmap -builtin ,a :dialog addons<CR>
+
+" Display download
+nmap -builtin ,d :downloads<CR>
+
+" Tabgroup
+if config.OS.isMacOSX
+	nmap -builtin ,e <S-M-e>
+else
+	nmap -builtin ,e <S-C-e>
+end
+
+" Options
+
+" Default search engine
+set defsearch='google'
+
+" Show bookmarks
+set guioptions+=B
+
+" Hints
+set hintkeys=qsdfglkjh
+
+" ~ as pwd
+silent cd ~
+
+" Remove all search engines except Google
+js services.browserSearch.getEngines().forEach(function (e) {if(e.name!="Google") e.hidden = true})
+
+" vim: set ft=pentadactyl:

@@ -1,0 +1,9 @@
+
+[repos/c/neovim]
+checkout = git clone 'https://github.com/neovim/neovim.git' 'neovim'
+
+[repos/cpp/fish]
+checkout = git clone 'https://github.com/fish-shell/fish-shell.git' 'fish'
+
+[repos/cpp/SFML]
+checkout = git clone 'https://github.com/LaurentGomila/SFML.git' 'SFML'
