@@ -7,7 +7,6 @@ color =
 graphlog =
 hgext.bookmarks =
 hggit = ~/repos/vcs/hg-git/hggit
-hgflow =
 
 [alias]
 clog = glog --style compact

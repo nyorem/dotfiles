@@ -1,5 +1,3 @@
-"1.1
-
 loadplugins '\.(js|penta)$'
 group user
 
@@ -11,9 +9,11 @@ colorscheme solarized-light
 map -builtin j 5j
 map -builtin k 5k
 
-" Swap d/D
-nmap -builtin d D
-nmap -builtin D d
+" Use h/l to go back/forward in the history
+map -builtin h H
+map -builtin l L
+map -builtin H h
+map -builtin L l
 
 " Switch to fullscreen
 map ,f :set<Space>fullscreen!<CR>
