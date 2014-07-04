@@ -1,32 +1,52 @@
 # My dotfiles
 
-## What's in it ?
+## What's included ?
 
-### Shell
-- bash_profile : bash config
-- config/fish : fish config files
+### Shells
+- `bash` : bash_profile, bashrc
+- `fish` : config/fish
+
 
 ### VCS
-- gitconfig : git config
-- hgrc : hg config
+- `git` : gitconfig
+- `hg` : hgrc
+- [mr](https://joeyh.name/code/mr/) : mrconfig
+
 
 ### OSX
-- iterm : colors for iTerm2 (tomorrow, solarized and molokai)
-- slate : slate config file
-- keyremap4macbook : keyboard behaviour customisation
+- [iterm](http://www.iterm2.com) : colors for iTerm2 (tomorrow, solarized and molokai)
+- [slate](https://github.com/jigish/slate)
+- [hydra](https://github.com/sdegutis/hydra)
+- [keyremap4macbook](https://pqrs.org/macosx/keyremap4macbook/)
+- `dircolors` : dircolors files (molokai, solarized and original)
 
-### Others
-- dircolors : dircolors files (molokai, solarized and original) for OSX
-- bin : personal binaries
+
+### Development
+- `bin` : personal scripts
+- [tmux](http://tmux.sourceforge.net) : `tmux.conf`, `tmuxline.conf`
+- `ghci` : hoogle commands for ghci
+
+
+### Divers
+- rcrc / hooks : [rcm](https://github.com/thoughtbot/rcm) config
 - offlineimaprc / msmtprc / urlview / mutt : mutt configuration (see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/))
-- tmux.conf : tmux config
-- rcrc / hooks : rcm config
+
+
+### Web
+- [pentadactyl](http://5digits.org/pentadactyl/) : `pentadactylrc`
+
+
+### Other repos
+- [vim](https://github.com/nyorem/dotvim)
+- [zsh](https://github.com/nyorem/oh-my-zsh)
+
 
 -----
 
+
 ## HOW TO INSTALL :
 
-- Dependencies : `brew tap mike-burns/rcm && brew install rcm` on OSX
+- Dependencies : `brew tap thoughtbot/formulae && brew install rcm` on OSX
 - Clone : `cd && git clone https://github.com/nyorem/dotfiles`
 - Symlink : `rcup -d dotfiles -x "README.md bin iterm dircolors" -v`
 
