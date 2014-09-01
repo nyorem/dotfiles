@@ -21,9 +21,13 @@ set -x PATH /usr/local/bin $PATH # brew
 set -x PATH /usr/local/sbin $PATH # brew
 set -x PATH $HOME/bin $PATH # my bin
 set -x PATH /usr/local/texlive/2013/bin/universal-darwin $PATH # TexLive 2013
-set -x PATH HOME/.rvm/bin $PATH # Add RVM to PATH for scripting
+set -x PATH $HOME/.rvm/bin $PATH # Add RVM to PATH for scripting
 set -x PATH $HOME/.rvm/gems/ruby-2.0.0-p247/bin $PATH # rvm
+
+# haskell
 set -x PATH $HOME/.cabal/bin $PATH # cabal
+set GHC_DOT_APP /Applications/ghc-7.8.2.app
+set -x PATH $GHC_DOT_APP/Contents/bin $PATH # ghc
 
 # MANPATH
 set -x MANPATH /usr/local/share/man $MANPATH

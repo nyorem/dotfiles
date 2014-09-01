@@ -37,7 +37,7 @@ end
 " Options
 
 " Default search engine
-set defsearch='google'
+set defsearch='duckduckgo'
 
 " Show bookmarks
 set guioptions+=B
@@ -47,8 +47,5 @@ set hintkeys=qsdfglkjh
 
 " ~ as pwd
 silent cd ~
-
-" Remove all search engines except Google
-js services.browserSearch.getEngines().forEach(function (e) {if(e.name!="Google") e.hidden = true})
 
 " vim: set ft=pentadactyl:
