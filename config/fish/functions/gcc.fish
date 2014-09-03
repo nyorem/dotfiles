@@ -1,3 +1,3 @@
 function gcc
-	gcc-4.8 $argv
+	gcc-4.9 $argv
 end
