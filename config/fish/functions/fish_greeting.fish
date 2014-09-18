@@ -1,4 +1,4 @@
 function fish_greeting
-        fortune -e  | cowsay -n -f "tux"
+        fortune -e  | cowthink -n -f "small"
         echo
 end

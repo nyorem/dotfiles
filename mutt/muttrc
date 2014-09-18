@@ -47,37 +47,32 @@ hdr_order from: to: cc: date: subject:  # and in this order
 #### GMAIL ####
 ###############
 
-# # Default inbox.
-# set spoolfile = "+jmeyron-gmail.com/INBOX"
+ # Default inbox.
+set spoolfile = "+jmeyron-gmail.com/INBOX"
 
 # # Mailboxes to show in the sidebar.
-# mailboxes +jmeyron-gmail.com/INBOX \
-#           +jmeyron-gmail.com/sent \
-#           +jmeyron-gmail.com/drafts \
-#           +jmeyron-gmail.com/Inscription \
-#           +jmeyron-gmail.com/Trash \
+mailboxes "+-- GMAIL -----------"
+mailboxes +jmeyron-gmail.com/INBOX \
+          +jmeyron-gmail.com/sent \
+          +jmeyron-gmail.com/drafts \
+          +jmeyron-gmail.com/Inscription \
+          +jmeyron-gmail.com/Trash \
 
-# # Other special folders.
-# set mbox      = "+jmeyron-gmail.com/archive"
-# set postponed = "+jmeyron-gmail.com/drafts"
+# Other special folders.
+set mbox      = "+jmeyron-gmail.com/archive"
+set postponed = "+jmeyron-gmail.com/drafts"
 
 ##############
 #### IMAG ####
 ##############
 
-# Default inbox.
-set spoolfile = "+imag/INBOX"
-
 # Mailboxes to show in the sidebar.
+mailboxes "+-- IMAG -----------"
 mailboxes +imag/INBOX \
           +imag/Important \
           +imag/Drafts \
           +imag/Sent \
           +imag/Trash \
-
-# Other special folders.
-set mbox      = "+imag.com/archive"
-set postponed = "+imag/drafts"
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
@@ -100,8 +95,8 @@ bind index <space>  collapse-thread
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
 # Sync email
-macro index O "<shell-escape>offlineimap -a Imag<enter>"           "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -a Imag -qf INBOX<enter>" "run offlineimap to sync inbox"
+macro index O "<shell-escape>offlineimap -a Imag,Gmail<enter>"           "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -a Imag,Gmail -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
@@ -159,7 +154,7 @@ set editor = "vim"                       # use vim to compose
 ### GMAIL ####
 ##############
 # set from     = "jmeyron@gmail.com"
-set sendmail = "/opt/local/bin/msmtp -a jmeyron"
+set sendmail = "/usr/local/bin/msmtp -a gmail"
 
 ##############
 #### IMAG ####

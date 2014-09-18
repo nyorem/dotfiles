@@ -34,7 +34,7 @@ alias vi="vim"
 export EDITOR=vim
 
 # Quelques trucs symapthiques
-fortune -e | cowsay -n
+fortune -e | cowthink -n -f "small"
 echo
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

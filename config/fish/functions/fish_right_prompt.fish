@@ -14,5 +14,5 @@ function fish_right_prompt -d "Right prompt"
 
     # Number of jobs
     set_color yellow
-    printf ' [%d] ' (jobs | wc -l)
+    printf ' (%d) ' (jobs | wc -l)
 end

@@ -8,22 +8,24 @@
 ;; (global-linum-mode t)
 ;; (setq linum-format "%d  ")
 
-;; evil-mode
-;; surround
+;; evil-surround
 (global-evil-surround-mode 1)
 
-;; Org-mode
-(setq org-agenda-files '("~/org"))
-;; end evil-mode
+;; evil-nerd-commenter
+(evilnc-default-hotkeys)
 
-;; Solarized-theme
+;; org-mode
+(setq org-agenda-files '("~/org"))
+(setq org-todo-keywords '((sequence "TODO" "WAITING" "DONE")))
+
+;; magit
+(global-set-key (kbd "C-x G") 'magit-status)
+
+;; solarized-theme
 (load-theme 'solarized-light t)
 
-;; Move between split windows
-(global-set-key (kbd "C-x <up>") 'windmove-up)
-(global-set-key (kbd "C-x <down>") 'windmove-down)
-(global-set-key (kbd "C-x <right>") 'windmove-right)
-(global-set-key (kbd "C-x <left>") 'windmove-left)
+;; projectile
+(setq projectile-completion-system 'grizzl)
 
 ;; Enable mouse
 (require 'mouse)
@@ -51,5 +53,7 @@
 
 ; disable alarm bells
 (setq visible-bell 1)
+
+
 
 ;;; personal.el ends here
