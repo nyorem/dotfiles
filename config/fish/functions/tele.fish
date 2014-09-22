@@ -1,3 +1,3 @@
 function tele
-        ssh meyronj@telesun.imag.fr
+        ssh meyronj@pcserveur.ensimag.fr
 end

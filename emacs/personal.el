@@ -14,6 +14,27 @@
 ;; evil-nerd-commenter
 (evilnc-default-hotkeys)
 
+;; escape quits
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state)
+
+;; use C-j / C-k for scrolling
+(define-key evil-normal-state-map (kbd "C-k") (lambda ()
+                    (interactive)
+                    (evil-scroll-up nil)))
+(define-key evil-normal-state-map (kbd "C-j") (lambda ()
+                        (interactive)
+                        (evil-scroll-down nil)))
+
+;; indent when CR
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
 ;; org-mode
 (setq org-agenda-files '("~/org"))
 (setq org-todo-keywords '((sequence "TODO" "WAITING" "DONE")))
@@ -53,7 +74,5 @@
 
 ; disable alarm bells
 (setq visible-bell 1)
-
-
 
 ;;; personal.el ends here

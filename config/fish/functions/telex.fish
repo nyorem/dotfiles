@@ -1,3 +1,3 @@
 function telex
-        ssh -X meyronj@telesun.imag.fr
+        ssh -X meyronj@pcserveur.ensimag.fr
 end

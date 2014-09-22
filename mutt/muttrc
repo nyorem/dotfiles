@@ -58,6 +58,11 @@ mailboxes +jmeyron-gmail.com/INBOX \
           +jmeyron-gmail.com/Inscription \
           +jmeyron-gmail.com/Trash \
 
+mailboxes "+-- GSoC -----------"
+mailboxes +jmeyron-gmail.com/gsoc \
+          +jmeyron-gmail.com/gsoc.cgal-develop \
+          +jmeyron-gmail.com/gsoc.mailing-list \
+
 # Other special folders.
 set mbox      = "+jmeyron-gmail.com/archive"
 set postponed = "+jmeyron-gmail.com/drafts"
@@ -75,7 +80,7 @@ mailboxes +imag/INBOX \
           +imag/Trash \
 
 # Index View Options ---------------------------------
-set date_format = "%m/%d"
+set date_format = "%d/%m"
 set index_format = "[%Z]  %D  %-20.20F  %s"
 set sort = threads                         # like gmail
 set sort_aux = reverse-last-date-received  # like gmail
@@ -173,3 +178,7 @@ bind index p recall-message
 bind index N search-opposite
 bind pager N search-opposite
 macro index a "<limit>all\n" "show all messages (undo limit)"
+
+# Auto colapsing threads
+folder-hook . "exec collapse-all"
+
