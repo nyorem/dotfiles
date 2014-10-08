@@ -12,9 +12,9 @@ alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
 alias ...="cd ../../"
 
 # cgal
-set CGAL_DIR $HOME/projets/cgal
-set -x PATH $HOME/projets/cgal/Scripts/scripts $PATH
-set -x PATH $HOME/projets/cgal/Scripts/developer_scripts $PATH
+set CGAL_DIR $HOME/projets/cgal/repo
+set -x PATH $CGAL_DIR/Scripts/scripts $PATH
+set -x PATH $CGAL_DIR/Scripts/developer_scripts $PATH
 
 # PATH
 set -x PATH /usr/local/bin $PATH # brew

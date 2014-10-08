@@ -8,9 +8,8 @@ checkout = git clone 'https://github.com/fish-shell/fish-shell.git' 'fish'
 [repos/cpp/SFML]
 checkout = git clone 'https://github.com/LaurentGomila/SFML.git' 'SFML'
 
-[projets/cgal]
-checkout = git clone 'ssh://gsoc@scm.cgal.org/var/git/cgal-gsoc.git' 'cgal'
-
-
 [repos/cpp/SPACECRAFT]
 checkout = git clone 'https://github.com/smealum/SPACECRAFT.git' 'SPACECRAFT'
+
+[projets/cgal/repo]
+checkout = git clone 'ssh://gsoc@scm.cgal.org/var/git/cgal-gsoc.git' 'repo'
