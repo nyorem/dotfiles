@@ -1,0 +1,64 @@
+;; -*- mode: emacs-lisp -*-
+;; This file is loaded by Spacemacs at startup.
+;; It must be stored in your home directory.
+
+;; Variables
+
+(setq-default
+ ;; List of additional paths where to look for configuration layers.
+ ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
+ dotspacemacs-configuration-layer-path '()
+ ;; List of contribution to load.
+ dotspacemacs-configuration-layers '()
+ ;; If non nil the frame is maximized when Emacs starts up (Emacs 24.4+ only)
+ dotspacemacs-fullscreen-at-startup nil
+ ;; A list of packages and/or extensions that will not be install and loaded.
+ dotspacemacs-excluded-packages '()
+ ;; The default package repository used if no explicit repository has been
+ ;; specified with an installed package.
+ ;; Not used for now.
+ dotspacemacs-default-package-repository nil
+)
+
+;; Functions
+
+(defun dotspacemacs/init ()
+  "User initialization for Spacemacs. This function is called at the very
+ startup."
+)
+
+(defun dotspacemacs/config ()
+  "This is were you can ultimately override default Spacemacs configuration.
+This function is called at the very end of Spacemacs initialization."
+    ;; Left-Option key = Option (for international characters)
+    ;; Right-Option key = Meta
+    (defun aq-binding (any) nil)
+    (load  "~/dotfiles/emacs/aquamacs-tools.el")
+    (load  "~/dotfiles/emacs/emulate-mac-keyboard-mode.el")
+    (setq emulate-mac-french-keyboard-mode t)
+    (setq mac-left-option-modifier nil)
+
+    ;; org agenda files
+    (setq org-agenda-files '("~/org/"))
+)
+
+;; Custom variables
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ac-ispell-requires 4)
+ '(ahs-case-fold-search nil)
+ '(ahs-default-range (quote ahs-range-whole-buffer))
+ '(ahs-idle-interval 0.25)
+ '(ahs-inhibit-face-list nil)
+ '(org-agenda-files nil)
+ '(ring-bell-function (quote ignore) t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

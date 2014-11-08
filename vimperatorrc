@@ -17,7 +17,7 @@ noremap ,f :set<Space>fullscreen!<CR>
 noremap ,s :source ~/.vimperatorrc<CR>
 
 " Default search engine
-set defsearch='duckduckgo'
+set defsearch='google'
 
 " Hints
 set hintchars=qsdfglkjh

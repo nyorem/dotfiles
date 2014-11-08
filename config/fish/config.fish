@@ -11,20 +11,33 @@
 alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
 alias ...="cd ../../"
 
-# cgal
-set CGAL_DIR $HOME/projets/cgal/repo
-set -x PATH $CGAL_DIR/Scripts/scripts $PATH
-set -x PATH $CGAL_DIR/Scripts/developer_scripts $PATH
-
 # PATH
-set -x PATH /usr/local/bin $PATH # brew
-set -x PATH /usr/local/sbin $PATH # brew
 set -x PATH $HOME/bin $PATH # my bin
-set -x PATH /usr/local/texlive/2013/bin/universal-darwin $PATH # TexLive 2013
+
+## brew
+set -x PATH /usr/local/bin $PATH
+set -x PATH /usr/local/sbin $PATH
+
+# texlive
+set -x PATH /usr/local/texlive/2014/bin/universal-darwin $PATH
+
+## rvm
 set -x PATH $HOME/.rvm/bin $PATH # Add RVM to PATH for scripting
 set -x PATH $HOME/.rvm/gems/ruby-2.0.0-p247/bin $PATH # rvm
 
-# haskell
+## cgal
+set CGAL_DIR $HOME/projets/cgal/repo # gsoc
+set CGAL_DIR_MASTER $HOME/projets/cgal/master # master
+set -x PATH $CGAL_DIR_MASTER/Scripts/scripts $PATH
+set -x PATH $CGAL_DIR_MASTER/Scripts/developer_scripts $PATH
+
+## android
+set -x PATH $HOME/dev/android/adt/sdk/platform-tools $PATH
+
+## cuda
+set -x PATH /Developer/NVIDIA/CUDA-6.5/bin $PATH
+
+## haskell
 set -x PATH $HOME/.cabal/bin $PATH # cabal
 set GHC_DOT_APP /Applications/ghc-7.8.2.app
 set -x PATH $GHC_DOT_APP/Contents/bin $PATH # ghc
