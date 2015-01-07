@@ -10,7 +10,6 @@
 ### VCS
 - `git` : gitconfig
 - `hg` : hgrc
-- [mr](https://joeyh.name/code/mr/) : mrconfig
 
 
 ### OSX
@@ -25,15 +24,17 @@
 - `bin` : personal scripts
 - [tmux](http://tmux.sourceforge.net) : `tmux.conf`, `tmuxline.conf`
 - `ghci` : hoogle commands for ghci
+- `emacs`: [spacemacs](http://github.com/syl20bnr/spacemacs) configuration
 
 
-### Divers
+### Others
 - rcrc / hooks : [rcm](https://github.com/thoughtbot/rcm) config
 - offlineimaprc / msmtprc / urlview / mutt : mutt configuration (see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/))
 
 
 ### Web
 - [pentadactyl](http://5digits.org/pentadactyl/) : `pentadactylrc`
+- [vimperator](http://www.vimperator.org/vimperator) : `vimperatorrc`
 
 
 ### Other repos

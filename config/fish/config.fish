@@ -32,10 +32,10 @@ set -x PATH $CGAL_DIR_MASTER/Scripts/scripts $PATH
 set -x PATH $CGAL_DIR_MASTER/Scripts/developer_scripts $PATH
 
 ## android
-set -x PATH $HOME/dev/android/adt/sdk/platform-tools $PATH
+# set -x PATH $HOME/dev/droid/adt/sdk/platform-tools $PATH
 
 ## cuda
-set -x PATH /Developer/NVIDIA/CUDA-6.5/bin $PATH
+# set -x PATH /Developer/NVIDIA/CUDA-6.5/bin $PATH
 
 ## haskell
 set -x PATH $HOME/.cabal/bin $PATH # cabal

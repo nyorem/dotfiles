@@ -2,3 +2,5 @@
 *~
 .*.swp
 backup/*
+
+bin/darcs

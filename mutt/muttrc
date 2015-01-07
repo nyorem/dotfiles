@@ -1,6 +1,6 @@
 # ColorScheme
-# source ~/.mutt/colors/mutt-colors-solarized-light-16.muttrc
-source ~/.mutt/colors/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/colors/mutt-colors-solarized-light-16.muttrc
+# source ~/.mutt/colors/mutt-colors-solarized-dark-16.muttrc
 
 # Paths ----------------------------------------------
 set folder           = ~/.mail               # mailbox location

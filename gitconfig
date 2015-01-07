@@ -14,7 +14,7 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue(%an)%Creset' --abbrev-commit --date=relative
 	oops = reset --soft HEAD^1
 	frm = !sh -c 'git rm `git ls-files --deleted`'
-	grep = grep -n
+	g = grep -n --break --heading
 [core]
 	autocrlf = input
 	safecflf = true
