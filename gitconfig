@@ -15,6 +15,7 @@
 	oops = reset --soft HEAD^1
 	frm = !sh -c 'git rm `git ls-files --deleted`'
 	g = grep -n --break --heading
+    yolo = push -f origin master
 [core]
 	autocrlf = input
 	safecflf = true
@@ -28,3 +29,7 @@
 	conflictstyle = diff3
 [credential]
 	helper = cache
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true

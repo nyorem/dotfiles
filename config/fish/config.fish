@@ -9,7 +9,16 @@
 
 # ALIASES
 alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
+alias tm="$HOME/bin/t.py --task-dir $HOME/tasks --list MOVIES --delete-if-empty"
 alias ...="cd ../../"
+
+# ABBREVIATIONS
+# git
+set -U fish_user_abbreviations 'g=git'
+set fish_user_abbreviations $fish_user_abbreviations 'gco=git checkout'
+set fish_user_abbreviations $fish_user_abbreviations 'gp=git push'
+set fish_user_abbreviations $fish_user_abbreviations 'gpu=git pull'
+set fish_user_abbreviations $fish_user_abbreviations 'gpr=git pull --rebase'
 
 # PATH
 set -x PATH $HOME/bin $PATH # my bin

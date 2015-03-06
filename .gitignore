@@ -4,3 +4,5 @@
 backup/*
 
 bin/darcs
+bin/todo
+bin/*.todo

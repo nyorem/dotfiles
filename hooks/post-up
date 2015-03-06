@@ -4,7 +4,14 @@
 #	-> bin directory
 #	-> configuration for KeyRemap4MacBook
 
-ln -sv $HOME/dotfiles/bin $HOME/bin
+BIN_NEW="$HOME/dotfiles/bin"
+BIN_OLD="$HOME/bin"
 
-ln -sv $HOME/dotfiles/keyremap4macbook/private.xml $HOME/Library/Application\ Support/KeyRemap4MacBook/private.xml
+rm "$BIN_OLD"
+ln -sv "$BIN_NEW" "$BIN_OLD"
+
+KEYREMAP_NEW="$HOME/dotfiles/keyremap4macbook/private.xml"
+KEYREMAP_OLD="$HOME/Library/Application Support/KeyRemap4MacBook/private.xml"
+
+cmp --silent "$KEYREMAP_OLD" "$KEYREMAP_NEW" || ln -sv $KEYREMAP_NEW $KEYREMAP_OLD
 

@@ -1,5 +1,5 @@
 function fish_prompt
-	# err - [tasks] 'dir' (branch) λ
+	# err - [tasks] 'dir' λ
 
     # exit status
     set -l last_status $status
