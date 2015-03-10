@@ -2,52 +2,26 @@
 
 ## What's included ?
 
-### Shells
-- `bash` : bash_profile, bashrc
-- `fish` : config/fish
-
-
-### VCS
-- `git` : gitconfig
-- `hg` : hgrc
-
-
-### OSX
-- [iterm](http://www.iterm2.com) : colors for iTerm2 (tomorrow, solarized and molokai)
-- [slate](https://github.com/jigish/slate)
+- bash
+- bin: some scripts I use sometimes.
+- dircolors: coloured ls (molokai, original and solarized)
+- emacs: [spacemacs](http://github.com/syl20bnr/spacemacs)
+- firefox: `vimperator` and `pentadactyl`.
+- fish
+- ghc: hoogle commands for`ghci`.
 - [hydra](https://github.com/sdegutis/hydra)
+- [iterm](http://www.iterm2.com): come colours (molokai, solarizd and tomorrow).
 - [keyremap4macbook](https://pqrs.org/macosx/keyremap4macbook/)
-- `dircolors` : dircolors files (molokai, solarized and original)
+- mutt: see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
+- [slate](https://github.com/jigish/slate)
+- tmux
+- vcs: `git` and `hg`
+- zsh: `oh-my-zsh`
 
+See [vim](https://github.com/nyorem/dotvim) for my `vim` configuration.
 
-### Development
-- `bin` : personal scripts
-- [tmux](http://tmux.sourceforge.net) : `tmux.conf`, `tmuxline.conf`
-- `ghci` : hoogle commands for ghci
-- `emacs`: [spacemacs](http://github.com/syl20bnr/spacemacs) configuration
+## How to install
 
-
-### Others
-- rcrc / hooks : [rcm](https://github.com/thoughtbot/rcm) config
-- offlineimaprc / msmtprc / urlview / mutt : mutt configuration (see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/))
-
-
-### Web
-- [pentadactyl](http://5digits.org/pentadactyl/) : `pentadactylrc`
-- [vimperator](http://www.vimperator.org/vimperator) : `vimperatorrc`
-
-
-### Other repos
-- [vim](https://github.com/nyorem/dotvim)
-- [zsh](https://github.com/nyorem/oh-my-zsh)
-
-
------
-
-
-## HOW TO INSTALL :
-
-- Dependencies : `brew tap thoughtbot/formulae && brew install rcm` on OSX
+- Dependencies: `stow` (on OSX with `Homebrew`: `brew install stow`)
 - Clone : `cd && git clone https://github.com/nyorem/dotfiles`
-- Symlink : `rcup -d dotfiles -x "README.md bin iterm dircolors" -v`
-
+- Symlink : `cd dotfiles && ./install.sh`

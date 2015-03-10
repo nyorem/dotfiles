@@ -106,8 +106,8 @@ layers configuration."
     ;; Left-Option key = Option (for international characters)
     ;; Right-Option key = Meta
     (defun aq-binding (any) nil)
-    (load  "~/dotfiles/emacs/aquamacs-tools.el")
-    (load  "~/dotfiles/emacs/emulate-mac-keyboard-mode.el")
+    (load  "~/.emacs.d/private/aquamacs-tools.el")
+    (load  "~/.emacs.d/private/emulate-mac-keyboard-mode.el")
     (setq emulate-mac-french-keyboard-mode t)
     (setq mac-left-option-modifier nil)
 
