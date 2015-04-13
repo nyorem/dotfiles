@@ -14,7 +14,6 @@ alias ...="cd ../../"
 
 # ABBREVIATIONS
 # git
-set -U fish_user_abbreviations 'g=git'
 set fish_user_abbreviations $fish_user_abbreviations 'gco=git checkout'
 set fish_user_abbreviations $fish_user_abbreviations 'gp=git push'
 set fish_user_abbreviations $fish_user_abbreviations 'gpu=git pull'
@@ -48,7 +47,7 @@ set -x PATH $CGAL_DIR_MASTER/Scripts/developer_scripts $PATH
 
 ## haskell
 set -x PATH $HOME/.cabal/bin $PATH # cabal
-set GHC_DOT_APP /Applications/ghc-7.8.2.app
+set GHC_DOT_APP /Applications/ghc-7.8.4.app
 set -x PATH $GHC_DOT_APP/Contents/bin $PATH # ghc
 
 # MANPATH

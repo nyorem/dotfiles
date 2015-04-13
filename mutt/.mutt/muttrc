@@ -61,7 +61,7 @@ mailboxes +jmeyron-gmail.com/INBOX \
 
 mailboxes "+-- GSoC -----------"
 mailboxes +jmeyron-gmail.com/gsoc \
-          +jmeyron-gmail.com/gsoc.cgal-develop \
+          +jmeyron-gmail.com/gsoc.cgal.develop \
           +jmeyron-gmail.com/gsoc.mailing-list \
 
 # Other special folders.
