@@ -34,7 +34,7 @@ set -x PATH $HOME/.rvm/bin $PATH # Add RVM to PATH for scripting
 set -x PATH $HOME/.rvm/gems/ruby-2.0.0-p247/bin $PATH # rvm
 
 ## cgal
-set CGAL_DIR $HOME/projets/cgal/repo # gsoc
+set CGAL_DIR $HOME/projets/cgal/vcm # gsoc
 set CGAL_DIR_MASTER $HOME/projets/cgal/master # master
 set -x PATH $CGAL_DIR_MASTER/Scripts/scripts $PATH
 set -x PATH $CGAL_DIR_MASTER/Scripts/developer_scripts $PATH
