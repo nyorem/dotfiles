@@ -11,6 +11,7 @@
 alias t="$HOME/bin/t.py --task-dir $HOME/tasks --list TODO --delete-if-empty"
 alias tm="$HOME/bin/t.py --task-dir $HOME/tasks --list MOVIES --delete-if-empty"
 alias ...="cd ../../"
+alias gnatmake="gnatmake -O3 -gnato -fstack-check"
 
 # ABBREVIATIONS
 # git
@@ -20,7 +21,9 @@ set fish_user_abbreviations $fish_user_abbreviations 'gpu=git pull'
 set fish_user_abbreviations $fish_user_abbreviations 'gpr=git pull --rebase'
 
 # PATH
+set -x GOPATH $HOME/go
 set -x PATH $HOME/bin $PATH # my bin
+set -x PATH $GOPATH/bin $PATH # go bin
 
 ## brew
 set -x PATH /usr/local/bin $PATH

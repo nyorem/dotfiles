@@ -4,3 +4,6 @@
 backup/*
 
 bin/darcs
+bin/medit
+bin/pdf-concat
+bin/stack

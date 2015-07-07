@@ -10,6 +10,14 @@ noremap l L
 noremap H h
 noremap L l
 
+" Use s for searching with Google
+nnoremap s ogoogle 
+nnoremap S tgoogle 
+
+" Use left/right arrows for left/right tab
+noremap <right> gt
+noremap <left> gT
+
 " Switch to fullscreen
 noremap ,f :set<Space>fullscreen!<CR>
 
