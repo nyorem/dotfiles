@@ -1,3 +1,5 @@
 function grep
-	ggrep $argv
+    # OS X
+	# ggrep $argv
+    command grep $argv
 end

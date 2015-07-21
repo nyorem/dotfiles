@@ -63,4 +63,5 @@ set -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
 set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/
 
 # ls colors
-eval (gdircolors -c ~/.dircolors/solarized/dircolors.ansi-light | sed 's/>&\/dev\/null$//')
+# OSX = gdircolors insteaf of dircolors
+eval (dircolors -c ~/.dircolors/solarized/dircolors.ansi-light | sed 's/>&\/dev\/null$//')

@@ -18,12 +18,14 @@ stow bash
 stow dircolors
 stow emacs
 stow firefox
-stow fish
+# stow fish
 stow ghc
-stow hydra
+# stow hydra
+stow mpd
 stow mutt
 # stow slate
 stow tmux
 stow vcs
-stow zsh
+stow x
+stow xmonad
 

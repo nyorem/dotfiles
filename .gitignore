@@ -3,7 +3,12 @@
 .*.swp
 backup/*
 
-bin/darcs
-bin/medit
-bin/pdf-concat
-bin/stack
+bin/bin/darcs
+bin/bin/medit
+bin/bin/pdf-concat
+bin/bin/stack
+
+xmonad/**/*.hi
+xmonad/**/*.o
+xmonad/**/*.errors
+xmonad/**/xmonad-x86_64-linux
