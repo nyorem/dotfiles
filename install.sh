@@ -27,5 +27,5 @@ stow mutt
 stow tmux
 stow vcs
 stow x
-stow xmonad
+# stow xmonad
 

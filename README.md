@@ -9,16 +9,20 @@
 - firefox: `vimperator` and `pentadactyl`.
 - fish
 - ghc: hoogle commands for`ghci`.
+_ i3
 - [hydra](https://github.com/sdegutis/hydra)
 - [iterm](http://www.iterm2.com): come colours (molokai, solarizd and tomorrow).
 - [keyremap4macbook](https://pqrs.org/macosx/keyremap4macbook/)
+- mpd: `mpd` and `ncmpcpp`.
 - mutt: see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
 - [slate](https://github.com/jigish/slate)
 - tmux
-- vcs: `git` and `hg`
-- zsh: `oh-my-zsh`
+- vcs: `git` and `hg`.
+- x: `xorg`, `urxvt`.
+- xmonad: `xmonad` and `xmonar`.
 
-See [vim](https://github.com/nyorem/dotvim) for my `vim` configuration.
+See [vim](https://github.com/nyorem/dotvim) for my `vim` configuration and
+[vim](https://github.com/nyorem/prezto) for the `zsh` one.
 
 ## How to install
 
