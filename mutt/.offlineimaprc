@@ -23,7 +23,8 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
 maxconnections = 1
 type = Gmail
 remoteuser = jmeyron@gmail.com
-remotepasseval = get_keychain_pass(account="jmeyron@gmail.com", server="imap.gmail.com")
+remotepasseval = get_pass("jmeyron@gmail.com")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 realdelete = no
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
@@ -51,6 +52,8 @@ type = IMAP
 remotehost = etu-ensimag.mail.grenet.fr
 remoteuser = meyronj@ensimag.grenoble-inp.fr
 remoteport = 993
-remotepasseval = get_keychain_pass(account="meyronj@ensimag.grenoble-inp.fr", server="etu-ensimag.mail.grenet.fr")
-ssl = yes
+remotepasseval = get_pass("Jocelyn.Meyron@ensimag.grenoble-inp.fr")
 folderfilter = lambda foldername: foldername not in ['Emailed Contacts', 'Contacts']
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
