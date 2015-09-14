@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+# Create (or attach) a tmux session whose name is the current directory's name.
+
+SESSION="${PWD##*/}"
+
+tmux new-session -As $SESSION
+

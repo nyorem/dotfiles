@@ -6,7 +6,6 @@ editor = vim
 color =
 graphlog =
 hgext.bookmarks =
-hggit = ~/repos/vcs/hg-git/hggit
 
 [alias]
 clog = glog --style compact
