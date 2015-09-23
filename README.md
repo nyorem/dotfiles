@@ -22,7 +22,7 @@ _ i3
 - xmonad: `xmonad` and `xmonar`.
 
 See [vim](https://github.com/nyorem/dotvim) for my `vim` configuration and
-[vim](https://github.com/nyorem/prezto) for the `zsh` one.
+[prezto](https://github.com/nyorem/prezto) for the `zsh` one.
 
 ## How to install
 
