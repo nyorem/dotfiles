@@ -191,7 +191,11 @@ projets/cgal
 # mail
 .mail
 
-# stack
+# rust
+.cargo
+
+# haskell
+.cabal
 .stack
 projets/*/.stack-work
 dev/*/.stack-work
