@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+# Convert a list of m4a files to mp3.
+
+# Handle file with spaces
+# see: http://stackoverflow.com/questions/7039130/bash-iterate-over-list-of-files-with-spaces
+# and: https://bbs.archlinux.org/viewtopic.php?id=182037 for a ffmpeg issue
+find . -iname "*.m4a" | while read file
+do
+    IN="$file"
+    OUT=${IN%.*}.mp3
+    echo $IN
+    ffmpeg -v 5 -y -i "$IN" -acodec libmp3lame -ac 2 -ab 192k "$OUT" -nostdin
+done
+

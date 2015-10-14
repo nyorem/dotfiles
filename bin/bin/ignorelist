@@ -190,15 +190,21 @@ projets/cgal
 
 # mail
 .mail
+.thunderbird
 
 # rust
 .cargo
 
 # haskell
+.ghcjs
 .cabal
 .stack
-projets/*/.stack-work
 dev/*/.stack-work
+dev/*/.cabal-sandbox
+projets/*/.stack-work
+projets/*/.cabal-sandbox
+repos/*/.stack-work
+repos/*/.cabal-sandbox
 
 # Dropbox
 Dropbox

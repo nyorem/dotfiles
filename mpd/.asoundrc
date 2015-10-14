@@ -1,0 +1,32 @@
+# ALSA library configuration file
+
+# Include settings that are under the control of asoundconf(1).
+# (To disable these settings, comment out this line.)
+</home/nyorem/.asoundrc.asoundconf>
+
+# Equaliser
+# see: https://patrick-nagel.net/blog/archives/180
+# and: https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Using_ALSAEqual_.28provides_UI.29
+
+ctl.equal {
+    type equal;
+}
+
+pcm.plugequal {
+    type equal;
+    # Modify the line below if you do not
+    # want to use sound card 0.
+    #slave.pcm "plughw:0,0";
+    # by default we want to play from more sources at time:
+    slave.pcm "plug:dmix";
+}
+
+pcm.equal {
+# Or if you want the equalizer to be your
+# default soundcard uncomment the following
+# line and comment the above line.
+# pcm.!default {
+    type plug;
+    slave.pcm plugequal;
+}
+

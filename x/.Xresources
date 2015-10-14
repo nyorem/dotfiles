@@ -58,8 +58,8 @@ URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
 
 !! Colours (source: https://github.com/solarized/xresources)
-! #include ".xresources/Xresources.dark"
-#include ".xresources/Xresources.light"
+#include ".xresources/Xresources.dark"
+! #include ".xresources/Xresources.light"
 
 URxvt.intensityStyles: false
 
