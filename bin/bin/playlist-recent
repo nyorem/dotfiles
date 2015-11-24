@@ -2,15 +2,22 @@
 # Create a playlist 'recent.m3u' containing music newer than $1 days.
 # c = creation / m = modification / a = access
 
+if [ "$#" -ne 1 ]; then
+    echo "Not enough arguments!"
+    exit 1
+fi
+
 NEWER="$1"
 MUSICDIR="$HOME/Desktop/media/Music"
 PLAYLISTFILE="recent.m3u"
 
 find $MUSICDIR -iname "*.mp3" -mtime -"$NEWER" -print
 
-read -p "Do you wish to continue? (Y/n) " yn
+read -p "Do you wish to continue? (Y/n/a) " yn
 case $yn in
     [Yy]* ) find $MUSICDIR -iname "*.mp3" -mtime -"$NEWER" > "$HOME/.mpd/playlists/$PLAYLISTFILE"
+        ;;
+    [Aa]* ) find $MUSICDIR -iname "*.mp3" -mtime -"$NEWER" >> "$HOME/.mpd/playlists/$PLAYLISTFILE"
         ;;
     * ) exit
         ;;

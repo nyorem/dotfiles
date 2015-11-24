@@ -40,7 +40,8 @@ set editor=mvim
 silent cd ~
 
 " Deactivate vimperator on certain sites
-autocmd LocationChange .*                             js modes.passAllKeys = false
-autocmd LocationChange mail\\.google\\.com            js modes.passAllKeys = true
-autocmd LocationChange docs\\.google\\.com/           js modes.passAllKeys = true
+autocmd LocationChange .*                                   js modes.passAllKeys = false
+autocmd LocationChange mail\\.google\\.com                  js modes.passAllKeys = true
+autocmd LocationChange docs\\.google\\.com/                 js modes.passAllKeys = true
+autocmd LocationChange webmail\\.ampere\\.grenoble-inp\\.fr js modes.passAllKeys = true
 

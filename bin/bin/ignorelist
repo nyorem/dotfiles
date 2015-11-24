@@ -209,3 +209,8 @@ repos/*/.cabal-sandbox
 # Dropbox
 Dropbox
 
+# Zeal
+.local/share/Zeal
+
+# julia
+.julia

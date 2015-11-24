@@ -1,8 +1,13 @@
-setxkbmap fr
-xbindkeys
+#! /bin/sh
 
-xrdb -merge .Xresources
+setxkbmap fr
+
+# xbindkeys
+sxhkd -c $HOME/.sxhkdrc > /dev/null 2>&1 &
+
+xrdb -load .Xresources
 feh --bg-fill $HOME/Desktop/media/Images/background
 
-exec i3
+exec swm
+# exec i3
 

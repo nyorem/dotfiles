@@ -9,10 +9,11 @@
 - firefox: `vimperator` and `pentadactyl`.
 - fish
 - ghc: hoogle commands for`ghci`.
-_ i3
+- i3
 - [hydra](https://github.com/sdegutis/hydra)
 - [iterm](http://www.iterm2.com): come colours (molokai, solarizd and tomorrow).
 - [keyremap4macbook](https://pqrs.org/macosx/keyremap4macbook/)
+- latex: `latexmk` config.
 - mpd: `mpd` and `ncmpcpp`.
 - mutt: see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
 - [slate](https://github.com/jigish/slate)

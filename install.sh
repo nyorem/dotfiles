@@ -12,6 +12,7 @@ stow gpg
 # stow hydra
 # stow i3
 # stow iterm
+stow latex
 stow mpd
 stow mutt
 # stow slate

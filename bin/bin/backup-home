@@ -4,5 +4,5 @@
 IGNORELIST="$HOME/bin/ignorelist"
 BACKUP_DIR="/run/media/$USER/Backup"
 
-time rsync -aP --exclude-from=$IGNORELIST /home/$USER/ $BACKUP_DIR
+time rsync -aP --delete-before --exclude-from=$IGNORELIST /home/$USER/ $BACKUP_DIR
 

@@ -5,7 +5,6 @@ backup/*
 
 bin/bin/darcs
 bin/bin/medit
-bin/bin/pdf-concat
 bin/bin/stack
 
 xmonad/**/*.hi
