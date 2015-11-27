@@ -1,7 +1,9 @@
 #! /bin/sh
 
+# Keymap
 setxkbmap fr
 
+# wmutils
 # xbindkeys
 sxhkd -c $HOME/.sxhkdrc > /dev/null 2>&1 &
 

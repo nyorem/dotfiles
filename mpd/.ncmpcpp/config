@@ -247,7 +247,7 @@ visualizer_type = spectrum
 ##   not available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[red]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -437,23 +437,23 @@ user_interface = alternative
 ##
 #
 #search_engine_default_search_mode = 1
-#
-#external_editor = nano
-#
+
+external_editor = vim
+
 ## Note: set to yes if external editor is a console application.
 ##
 #use_console_editor = yes
 #
 ##### colors definitions #####
-#
-#colors_enabled = yes
-#
+
+colors_enabled = yes
+
 #empty_tag_color = cyan
 #
 #header_window_color = default
-#
-#volume_color = default
-#
+
+volume_color = red
+
 #state_line_color = default
 #
 #state_flags_color = default
@@ -475,9 +475,9 @@ user_interface = alternative
 #alternative_ui_separator_color = black
 #
 #active_column_color = red
-#
-#visualizer_color = yellow
-#
+
+visualizer_color = red
+
 #window_border_color = green
 #
 #active_window_border = red

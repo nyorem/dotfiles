@@ -9,7 +9,7 @@
 - firefox: `vimperator` and `pentadactyl`.
 - fish
 - ghc: hoogle commands for`ghci`.
-- i3
+- i3: `i3` and `i3blocks`.
 - [hydra](https://github.com/sdegutis/hydra)
 - [iterm](http://www.iterm2.com): come colours (molokai, solarizd and tomorrow).
 - [keyremap4macbook](https://pqrs.org/macosx/keyremap4macbook/)
@@ -19,7 +19,7 @@
 - [slate](https://github.com/jigish/slate)
 - tmux
 - vcs: `git` and `hg`.
-- x: `xorg`, `urxvt`.
+- x: `Xorg`, `urxvt`.
 - xmonad: `xmonad` and `xmonar`.
 
 See [vim](https://github.com/nyorem/dotvim) for my `vim` configuration and

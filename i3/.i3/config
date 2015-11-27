@@ -1,20 +1,51 @@
+# Dependencies
+# -> Icons: ttf-font-awesome
+# -> Program launcher; rofi
+# -> Sound: alsa-utils
+# -> Keyboard backlight: asus-kbd-backlight
+# -> Screenshot: scrot
+# -> Network: NetworkManager nm-applet
+# -> Wallpaper: feh
+# -> bar: i3blocks
+
 # mod
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Font (window titles, GTK applications and i3bar)
 # font pango:monospace 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
+font pango:DejaVu Sans Book 9
+# For older versions of i3, use that font:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+
+## Colours
+### Dark Solarized theme
+### black dark/light
+set $color00    #073642
+set $color08    #002B36
+### red dark/light
+set $color01    #DC322F
+set $color09    #CB4B16
+### green dark/light
+set $color02    #859900
+set $color10    #586E75
+### yellow dark/light
+set $color03    #B58900
+set $color11    #657B83
+### blue dark/light
+set $color04    #268BD2
+set $color12    #839496
+### magenta dark/light
+set $color05    #D33682
+set $color13    #6C71C4
+### cyan dark/light
+set $color06    #2AA198
+set $color14    #93A1A1
+### white dark/light
+set $color07    #EEE8D5
+set $color15    #FDF6E3
+### background / foreground
+set $background #002B36
+set $foreground #839496
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -27,7 +58,7 @@ bindsym $mod+Shift+a kill
 
 # start dmenu / rofi (a program launcher)
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -bg "$background" -fg "$foreground" -hlbg "$color06" -hlfg "$color08" -bc "$color01" -bw 0 -eh 2 -width 100 -padding 480 -lines 5 -lines-margin 5 -fn "DejaVu Sans Mono 13" -opacity 80
 
 # change focus
 bindsym $mod+h focus left
@@ -79,29 +110,44 @@ bindsym $mod+q focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Workspace names
+set $workspace1 "1:"
+set $workspace2 "2:"
+set $workspace3 "3:"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "7"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "0:"
+
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+ampersand workspace $workspace1
+bindsym $mod+eacute workspace $workspace2
+bindsym $mod+quotedbl workspace $workspace3
+bindsym $mod+apostrophe workspace $workspace4
+bindsym $mod+parenleft workspace $workspace5
+bindsym $mod+minus workspace $workspace6
+bindsym $mod+egrave workspace $workspace7
+bindsym $mod+underscore workspace $workspace8
+bindsym $mod+ccedilla workspace $workspace9
+bindsym $mod+agrave workspace $workspace10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2
-bindsym $mod+Shift+quotedbl move container to workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+minus move container to workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7
-bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+ampersand move container to workspace $workspace1
+bindsym $mod+Shift+eacute move container to workspace $workspace2
+bindsym $mod+Shift+quotedbl move container to workspace $workspace3
+bindsym $mod+Shift+apostrophe move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+minus move container to workspace $workspace6
+bindsym $mod+Shift+egrave move container to workspace $workspace7
+bindsym $mod+Shift+underscore move container to workspace $workspace8
+bindsym $mod+Shift+ccedilla move container to workspace $workspace9
+bindsym $mod+Shift+agrave move container to workspace $workspace10
+
+## Open Thunderbird in workspace 3
+assign [class="Thunderbird"] $workspace3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -110,7 +156,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lock
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec $HOME/.i3/scripts/lock.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -140,8 +186,8 @@ bindsym $mod+r mode "resize"
 
 # Custom keybindings
 ## Volume control
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute
 bindsym XF86AudioMute exec amixer set Master toggle
 
 ## Keyboard backlight
@@ -155,10 +201,44 @@ bindsym $mod+Shift+s exec scrot '%d-%m-%Y_%H-%M-%S.png' -e 'mv $f ~/shots/'
 ### NetworkManager
 exec --no-startup-id nm-applet
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+## Wallpaper
+## exec will execute every time i3 is reloaded
+## exec_always will execute every time the file is reloaded
+exec_always feh --bg-fill $HOME/Desktop/media/Images/ph-alices.png
+
+## Compisitor
+exec compton -f
+
+## Thuderbird
+exec thunderbird
+
+### Client colors
+# colorclass            <border>      <bg>          <text>      <indicator>
+client.focused          $color04      $color04      $color07    $color02
+client.focused_inactive $background   $background   $color07    $color02
+client.unfocused        $background   $background   $color12    $color10
+client.urgent           $background   $background   $color02    $color10
+
+### Misc
+hide_edge_borders both
+
+# i3blcoks
 bar {
     position top
-    status_command i3status
+
+    colors {
+        background $background
+        # separator  $color00
+        statusline $color12
+
+        # colorclass        <border>      <bg>          <text>
+        focused_workspace   $color04      $color04      $color07
+        active_workspace    $color04      $background   $color07
+        inactive_workspace  $background   $background   $color12
+        urgent_workspace    $background   $background   $color02
+    }
+
+    # status_command i3status
+    status_command i3blocks -c $HOME/.i3/i3blocks.conf
 }
 

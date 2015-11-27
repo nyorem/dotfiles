@@ -1,9 +1,9 @@
 # Increase volume
-"amixer set Master 5%+"
+"amixer set Master 5%+ unmute"
    XF86AudioRaiseVolume
 
 # Decrease volume
-"amixer set Master 5%-"
+"amixer set Master 5%- unmute"
    XF86AudioLowerVolume
 
 # Toggle volume

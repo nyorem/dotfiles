@@ -1,18 +1,18 @@
-# i3status configuration file.
-
 general {
     colors = true
     interval = 2
 }
 
 order += "cpu_usage"
-# order += "load"
-# order += "disk /"
 order += "wireless _first_"
-# order += "ethernet _first_"
 order += "volume master"
 order += "battery 0"
 order += "tztime local"
+
+# Unused
+# order += "load"
+# order += "disk /"
+# order += "ethernet _first_"
 
 wireless _first_ {
     # format_up = "W: (%quality at %essid) %ip"
@@ -27,7 +27,8 @@ ethernet _first_ {
 }
 
 battery 0 {
-    format = "%status %percentage %remaining"
+    # format = "%status %percentage %remaining"
+    format = "%status %percentage"
 }
 
 tztime local {
@@ -47,10 +48,10 @@ disk "/" {
 }
 
 volume master {
-        format = "♪: %volume"
-        format_muted = "♪: muted (%volume)"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
+    format = "♪: %volume"
+    format_muted = "♪: muted (%volume)"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
 
