@@ -28,8 +28,8 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=14
-/* URxvt*font: xft:DejaVu Sans Mono:size=10:antialias=true:hinting=true */
+URxvt*font: xft:Source Code Pro:pixelsize=13
+/* URxvt*font: xft:DejaVu Sans Mono:pixelsize=13 */
 URxvt*boldFont: xft:Monospace:pixelsize=14
 
 ! Fix font space
@@ -50,7 +50,7 @@ URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 ! Cursor
-URxvt.cursorBlink:          true
+URxvt.cursorBlink:          false
 URxvt.cursorColor:          #657b83
 URxvt.cursorUnderline:      false
 

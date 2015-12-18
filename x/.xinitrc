@@ -7,9 +7,12 @@ setxkbmap fr
 # xbindkeys
 sxhkd -c $HOME/.sxhkdrc > /dev/null 2>&1 &
 
+# Colours / Wallpaper
 xrdb -load .Xresources
 feh --bg-fill $HOME/Desktop/media/Images/background
 
-exec swm
-# exec i3
+# Applications
+mpd &
+
+exec i3
 

@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
 
 # stow
+# stow arch
 # stow bash
 stow bin
 stow dircolors

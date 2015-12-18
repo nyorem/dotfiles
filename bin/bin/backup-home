@@ -1,8 +1,0 @@
-#! /usr/bin/env bash
-# Backup my home folder using rsync.
-
-IGNORELIST="$HOME/bin/ignorelist"
-BACKUP_DIR="/run/media/$USER/Backup"
-
-time rsync -aP --delete-before --exclude-from=$IGNORELIST /home/$USER/ $BACKUP_DIR
-
