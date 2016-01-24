@@ -8,7 +8,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 NEWER="$1"
-MUSICDIR="$HOME/Desktop/media/Music"
+MUSICDIR="$HOME/Desktop/media/music"
 PLAYLISTFILE="recent.m3u"
 
 find $MUSICDIR -iname "*.mp3" -mtime -"$NEWER" -print

@@ -18,6 +18,7 @@
 - mpd: `mpd` and `ncmpcpp`.
 - mutt: see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
 - [slate](https://github.com/jigish/slate)
+- [todotxt](http://todotxt.com/)
 - tmux
 - vcs: `git` and `hg`.
 - x: `Xorg`, `urxvt`.

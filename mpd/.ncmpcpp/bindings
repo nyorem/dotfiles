@@ -56,15 +56,25 @@ def_key "n"
 def_key "N"
     previous_found_item
 
+# <c-n> to move things down
+# m (<c-m> s interpreted as <cr>) to move things up
+def_key "ctrl-n"
+  move_sort_order_down
+
+def_key "ctrl-n"
+  move_selected_items_down
+
 # Operators
 ## delete
 def_key "d"
   delete_playlist_items
 
 # Misc
+# Change tag used in the library
 def_key "ctrl-t"
   toggle_library_tag_type
 
+# Command mode
 def_key ":"
   execute_command
 
@@ -80,6 +90,7 @@ def_command "w" [deferred]
 def_command "e" [deferred]
     edit_song
 
+# <c-l> to show the lyrics
 def_key "ctrl-l"
     show_lyrics
 

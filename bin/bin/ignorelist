@@ -214,3 +214,7 @@ Dropbox
 
 # julia
 .julia
+
+# emacs
+.emacs.d
+

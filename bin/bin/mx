@@ -3,5 +3,5 @@
 
 SESSION="${PWD##*/}"
 
-tmux new-session -As $SESSION
+tmux new-session -As "$SESSION"
 
