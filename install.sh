@@ -17,6 +17,7 @@ stow latex
 stow mpd
 stow mutt
 # stow slate
+stow todotxt
 stow tmux
 # stow torrent
 stow vcs

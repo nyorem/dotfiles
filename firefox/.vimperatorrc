@@ -11,8 +11,8 @@ noremap H h
 noremap L l
 
 " Use s for searching with Google
-nnoremap s ogoogle 
-nnoremap S tgoogle 
+nnoremap s :js toggle_bottombar('on')<CR>ogoogle 
+nnoremap S :js toggle_bottombar('on')<CR>tgoogle 
 
 " Use left/right arrows for left/right tab
 noremap <right> gt
@@ -32,9 +32,6 @@ set hintchars=qsdfglkjh
 
 " Remove address bar
 set gui=nonavigation
-
-" External editor
-set editor=mvim
 
 " ~ as pwd
 silent cd ~
@@ -77,3 +74,6 @@ function toggle_bottombar(p) {
 }
 toggle_bottombar();
 EOF
+
+% vim: set filetype=vim:
+
