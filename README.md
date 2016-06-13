@@ -33,8 +33,8 @@ See [vim](https://github.com/nyorem/dotvim) for my `vim` configuration and
 - Clone : `cd && git clone https://github.com/nyorem/dotfiles`
 - Symlink : `cd dotfiles && ./install.sh`
 
-### Tips
+## Tips
 
-## Use the homepage as the new tab page in Firefox
+### Use the homepage as the new tab page in Firefox
 Install the [New Tab Homepage](https://addons.mozilla.org/fr/firefox/addon/new-tab-homepage/) extension.
 

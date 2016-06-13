@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+in="$1"
+out="${in%.*}.html"
+
+pandoc -s -c "$HOME/bin/github.css" $in -o $out
+

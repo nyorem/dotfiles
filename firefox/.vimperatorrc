@@ -24,6 +24,9 @@ noremap ,f :set<Space>fullscreen!<CR>
 " Reload rc
 noremap ,s :source ~/.vimperatorrc<CR>
 
+" GUI
+noremap ,g :set gui=all<CR>
+
 " Default search engine
 set defsearch='google'
 
@@ -52,7 +55,7 @@ noremap t :js toggle_bottombar('on')<CR>t
 noremap T :js toggle_bottombar('on')<CR>t
 noremap / :js toggle_bottombar('on')<CR>/
 cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
-cnoremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
+noremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
 
 :js << EOF
 function toggle_bottombar(p) {
@@ -75,5 +78,5 @@ function toggle_bottombar(p) {
 toggle_bottombar();
 EOF
 
-% vim: set filetype=vim:
+" vim: set filetype=vim:
 

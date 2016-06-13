@@ -1,36 +1,37 @@
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
 [user]
-	name = Jocelyn MEYRON
-	email = Jocelyn.Meyron@grenoble-inp.org
-	; email = Jocelyn.Meyron@ensimag.grenoble-inp.fr
+    name = Jocelyn MEYRON
+    email = Jocelyn.Meyron@grenoble-inp.org
+    ; email = Jocelyn.Meyron@ensimag.grenoble-inp.fr
 [alias]
-	ci = commit
-	co = checkout
-	st = status
-	br = branch
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue(%an)%Creset' --abbrev-commit --date=relative
-	oops = reset --soft HEAD^1
-	frm = !sh -c 'git rm `git ls-files --deleted`'
-	g = grep -n --break --heading
+    ci = commit
+    co = checkout
+    st = status
+    br = branch
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue(%an)%Creset' --abbrev-commit --date=relative
+    oops = reset --soft HEAD^1
+    frm = !sh -c 'git rm `git ls-files --deleted`'
+    g = grep -n --break --heading
     yolo = push -f origin master
+    update-fork = !git fetch upstream && git checkout master && git rebase upstream/master
 [core]
-	autocrlf = input
-	safecflf = true
-	editor = vim
+    autocrlf = input
+    safecflf = true
+    editor = vim
 [diff]
-	renames = true
+    renames = true
 [push]
-	default = current
+    default = current
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+    tool = vimdiff
+    conflictstyle = diff3
 [credential]
-	helper = cache
+    helper = cache
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+    clean = git hawser clean %f
+    smudge = git hawser smudge %f
+    required = true

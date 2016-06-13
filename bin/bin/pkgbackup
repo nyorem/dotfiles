@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-rm -f $HOME/installed $HOME/orphans
+rm -f $HOME/installed $HOME/no-children
 
 yaourt -Qqe  > $HOME/installed
-yaourt -Qqdt > $HOME/orphans
+yaourt -Qqdt > $HOME/no-children
