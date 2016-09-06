@@ -15,7 +15,7 @@
 - [iterm](http://www.iterm2.com): some colourschemes (molokai, solarized and tomorrow)
 - [keyremap4macbook](https://pqrs.org/macosx/keyremap4macbook/)
 - latex: `latexmk` config.
-- mpd: `mpd` and `ncmpcpp`
+- media: `mpd`, `ncmpcpp` and `mpv`.
 - mutt: see [here](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
 - [slate](https://github.com/jigish/slate)
 - [todotxt](http://todotxt.com/)
@@ -24,8 +24,8 @@
 - x: `Xorg`, `urxvt`
 - xmonad: `xmonad` and `xmobar`
 
-See [vim](https://github.com/nyorem/dotvim) for my `vim` configuration and
-[prezto](https://github.com/nyorem/prezto) for the `zsh` one
+See [dotvim](https://github.com/nyorem/dotvim) for my `vim` configuration and
+[prezto](https://github.com/nyorem/prezto) for the `zsh` one.
 
 ## How to install?
 

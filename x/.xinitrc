@@ -4,7 +4,7 @@
 setxkbmap fr
 
 # wmutils
-# xbindkeys
+## xbindkeys
 sxhkd -c $HOME/.sxhkdrc > /dev/null 2>&1 &
 
 # Colours / Wallpaper

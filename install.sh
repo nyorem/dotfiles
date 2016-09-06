@@ -14,7 +14,7 @@ stow gpg
 # stow i3
 # stow iterm
 stow latex
-stow mpd
+stow media
 stow mutt
 # stow slate
 stow todotxt

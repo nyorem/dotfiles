@@ -1,0 +1,18 @@
+#! /usr/bin/env bash
+
+if [ $# -eq 1 ]; then
+    COVER="$1"
+    DIR="."
+elif [ $# -eq 2 ]; then
+    COVER="$1"
+    DIR="$2"
+else
+    echo "Usage: add-cover cover (dir)"
+    exit 1
+fi
+
+find "$DIR" -name "*.mp3" -type f | while read file; do
+    echo "Adding $COVER to $file"
+    eyeD3 --add-image "$COVER":FRONT_COVER "$file"
+done
+
