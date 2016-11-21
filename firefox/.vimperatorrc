@@ -78,5 +78,9 @@ function toggle_bottombar(p) {
 toggle_bottombar();
 EOF
 
+" Fix for FF49 bug with smart completion: https://github.com/vimperator/vimperator-labs/issues/590
+" Fixed in vimperator 3.15.0
+" js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
+
 " vim: set filetype=vim:
 

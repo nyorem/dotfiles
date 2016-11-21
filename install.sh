@@ -1,8 +1,6 @@
 #! /usr/bin/env bash
 
-# stow
-# stow arch
-# stow bash
+# Common
 stow bin
 stow dircolors
 # stow emacs
@@ -10,32 +8,36 @@ stow firefox
 # stow fish
 stow ghc
 stow gpg
-# stow hydra
-# stow i3
-# stow iterm
 stow latex
 stow media
 stow mutt
-# stow slate
 stow todotxt
 stow tmux
-# stow torrent
 stow vcs
 stow x
-# stow xmonad
 
-# OSX specific stuff
 SYSTEM=$(uname -s)
 if [ $SYSTEM = "Darwin" ]; then
-    # KeyRemap4MacBook
+    ## OSX
+
+    ### KeyRemap4MacBook
     KEYREMAP_NEW="$HOME/dotfiles/keyremap4macbook/private.xml"
     KEYREMAP_OLD="$HOME/Library/Application Support/KeyRemap4MacBook/private.xml"
 
     cmp --silent "$KEYREMAP_OLD" "$KEYREMAP_NEW" || ln -sv $KEYREMAP_NEW $KEYREMAP_OLD
 
-    # stow
+    ### stow
     stow bash
     stow hydra
     stow iterm
+# stow slate
+elif [ $SYSTEM = "Linux" ]; then
+    ## Linux
+
+    ### stow
+    stow arch
+    # stow i3
+    # stow torrent
+    # stow xmonad
 fi
 

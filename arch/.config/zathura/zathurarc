@@ -2,3 +2,6 @@
 set window-width 1920
 set window-height 1080
 
+# Use system clipboard
+set selection-clipboard clipboard
+
