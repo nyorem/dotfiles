@@ -3,4 +3,5 @@
 rm -f $HOME/installed $HOME/no-children
 
 yaourt -Qqe  > $HOME/installed
-yaourt -Qqdt > $HOME/no-children
+yaourt -Qdtq > $HOME/no-children
+

@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 ## Usage: rate-music [playlist|0-5]
 #
 # Adds current playing song to the mpd playlist corresponding to the

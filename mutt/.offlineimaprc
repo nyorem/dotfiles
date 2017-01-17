@@ -1,6 +1,6 @@
 [general]
 ui = TTY.TTYUI
-accounts = Gmail, Imag
+accounts = Gmail
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
 
@@ -36,24 +36,4 @@ folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
                                              '[Gmail]/Important',
                                              '[Gmail]/Spam',
                                              ]
-
-[Account Imag]
-localrepository = Imag-Local
-remoterepository = Imag-Remote
-status_backend = sqlite
-
-[Repository Imag-Local]
-type = Maildir
-localfolders = ~/.mail/imag
-
-[Repository Imag-Remote]
-maxconnections = 1
-type = IMAP
-remotehost = etu-ensimag.mail.grenet.fr
-remoteuser = meyronj@ensimag.grenoble-inp.fr
-remoteport = 993
-remotepasseval = get_pass("Jocelyn.Meyron@ensimag.grenoble-inp.fr")
-folderfilter = lambda foldername: foldername not in ['Emailed Contacts', 'Contacts']
-ssl = yes
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 

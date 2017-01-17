@@ -68,18 +68,6 @@ mailboxes +jmeyron-gmail.com/gsoc \
 set mbox      = "+jmeyron-gmail.com/archive"
 set postponed = "+jmeyron-gmail.com/drafts"
 
-##############
-#### IMAG ####
-##############
-
-# Mailboxes to show in the sidebar.
-mailboxes "+-- IMAG -----------"
-mailboxes +imag/INBOX \
-          +imag/Important \
-          +imag/Drafts \
-          +imag/Sent \
-          +imag/Trash \
-
 # Index View Options ---------------------------------
 set date_format = "%d/%m"
 set index_format = "[%Z]  %D  %-20.20F  %s"
@@ -101,8 +89,8 @@ bind index <space>  collapse-thread
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
 # Sync email
-macro index O "<shell-escape>offlineimap -a Imag,Gmail<enter>"           "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -a Imag,Gmail -qf INBOX<enter>" "run offlineimap to sync inbox"
+macro index O "<shell-escape>offlineimap -a Gmail<enter>"           "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -a Gmail -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
@@ -159,14 +147,8 @@ set editor = "vim"                       # use vim to compose
 ##############
 ### GMAIL ####
 ##############
-# set from     = "jmeyron@gmail.com"
+set from     = "jmeyron@gmail.com"
 set sendmail = "msmtp -a gmail"
-
-##############
-#### IMAG ####
-##############
-set from     = "Jocelyn.Meyron@ensimag.grenoble-inp.fr"
-# set sendmail = "msmtp -a imag"
 
 set sendmail_wait = 0
 unset record
