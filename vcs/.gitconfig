@@ -17,7 +17,7 @@
     frm = !sh -c 'git rm `git ls-files --deleted`'
     g = grep -n --break --heading
     yolo = push -f origin master
-    update-fork = !git fetch upstream && git checkout master && git rebase upstream/master
+    update-fork = !git fetch upstream && git checkout master && git merge upstream/master
 [core]
     autocrlf = input
     safecflf = true
@@ -35,3 +35,8 @@
     clean = git hawser clean %f
     smudge = git hawser smudge %f
     required = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
