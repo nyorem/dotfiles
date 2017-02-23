@@ -31,10 +31,12 @@
     conflictstyle = diff3
 [credential]
     helper = cache
-[filter "hawser"]
-    clean = git hawser clean %f
-    smudge = git hawser smudge %f
-    required = true
+[url "https://aur.archlinux.org/"]
+    insteadOf = "aur:"
+[url "https://github/"]
+    insteadOf = "gh:"
+[url "git@github.com:"]
+    pushInsteadOf = "gh:"
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
