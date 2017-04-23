@@ -58,6 +58,7 @@ mailboxes +jmeyron-gmail.com/INBOX \
           +jmeyron-gmail.com/drafts \
           +jmeyron-gmail.com/Inscription \
           +jmeyron-gmail.com/Trash \
+          +jmeyron-gmail.com/ljk \
 
 mailboxes "+-- GSoC -----------"
 mailboxes +jmeyron-gmail.com/gsoc \
