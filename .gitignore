@@ -6,6 +6,7 @@ backup/*
 bin/bin/darcs
 bin/bin/medit
 bin/bin/stack
+bin/bin/rclone
 
 xmonad/**/*.hi
 xmonad/**/*.o
