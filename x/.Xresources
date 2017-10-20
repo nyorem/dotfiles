@@ -22,14 +22,14 @@ URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
-URxvt.saveLines:            100
+URxvt.saveLines:            100000
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt*font: xft:Source Code Pro:pixelsize=13
-/* URxvt*font: xft:DejaVu Sans Mono:pixelsize=13 */
+/* URxvt*font: xft:Source Code Pro::style=Regular:pixelsize=13 */
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=13
 URxvt*boldFont: xft:Monospace:pixelsize=14
 
 ! Fix font space
@@ -41,7 +41,7 @@ URxvt.scrollBar:            false
 
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher,clipboard
-URxvt.url-launcher:         /usr/bin/firefox
+URxvt.url-launcher:         /usr/bin/chromium
 URxvt.matcher.button:       1
 
 ! Copy / paste
