@@ -79,6 +79,7 @@ set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 # Index Key Bindings ---------------------------------
+bind index g        noop
 bind index gg       first-entry
 bind index G        last-entry
 
@@ -116,6 +117,7 @@ alternative_order text/plain text/enriched text/html
 # Pager Key Bindings ---------------------------------
 bind pager k  previous-line
 bind pager j  next-line
+bind pager g  noop
 bind pager gg top
 bind pager G  bottom
 

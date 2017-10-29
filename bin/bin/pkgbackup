@@ -1,9 +1,8 @@
 #! /usr/bin/env bash
-# Uninstall with yaourt -Rns
+# Uninstall with yaourt -Rcs
 
-rm -f $HOME/installed $HOME/unneeded $HOME/unneeded-opt
+rm -f $HOME/installed $HOME/not-needed $HOME/not-needed-opt
 
 yaourt -Qqe  > $HOME/installed
-yaourt -Qdtq > $HOME/unneeded
-yaourt -Qdttq > $HOME/unneeded-opt
-
+yaourt -Qdtq > $HOME/not-needed
+yaourt -Qdttq > $HOME/not-needed-opt

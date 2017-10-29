@@ -2,9 +2,9 @@
 
 # Common
 stow bin
+stow browsers
 stow dircolors
 # stow emacs
-stow firefox
 # stow fish
 stow ghc
 stow gpg
