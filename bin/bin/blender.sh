@@ -2,5 +2,5 @@
 
 pkill blender
 
-optirun blender -P $HOME/bin/blender-bootstrap-listening.py
+optirun blender $@ -P $HOME/bin/blender-bootstrap-listening.py
 
