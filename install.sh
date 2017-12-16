@@ -1,17 +1,19 @@
 #! /usr/bin/env bash
 
 # Common
+stow bash
 stow bin
 stow browsers
 stow dircolors
 # stow emacs
 # stow fish
+stow gdb
 stow ghc
 stow gpg
 stow latex
 stow media
-stow mutt
-stow todotxt
+# stow mutt
+# stow todotxt
 stow tmux
 stow vcs
 stow x
@@ -27,17 +29,14 @@ if [ $SYSTEM = "Darwin" ]; then
     cmp --silent "$KEYREMAP_OLD" "$KEYREMAP_NEW" || ln -sv $KEYREMAP_NEW $KEYREMAP_OLD
 
     ### stow
-    stow bash
     stow hydra
-    stow iterm
-# stow slate
+    stow keyremap4macbook
+    # stow slate
 elif [ $SYSTEM = "Linux" ]; then
     ## Linux
 
     ### stow
     stow arch
     # stow i3
-    # stow torrent
     # stow xmonad
 fi
-

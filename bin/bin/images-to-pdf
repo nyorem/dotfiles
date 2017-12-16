@@ -1,0 +1,52 @@
+#! /usr/bin/env bash
+# Usage: images-to-pdf out_name
+
+# Dependencies:
+# - imagemagick for converting images to PDF
+# - poppler for concatenating PDFs
+
+per_batch=20
+out_name="test"
+if [ $# -eq 1 ]; then
+    out_name=$1
+fi
+
+images=$*
+images=$(ls -v *.png *.jpg 2> /dev/null)
+
+if [ -z $images ]; then
+    echo "No images found"
+    exit 1
+fi
+
+len=$(echo $images | wc -w)
+images=($images)
+
+# Create PDFs
+i=0
+ipdf=0
+while [  $i -lt $len ]; do
+    st=$i
+    end=$(($st + $per_batch))
+    slice="${images[@]:$st:$per_batch}"
+    out_pdf="${out_name}_${ipdf}.pdf"
+
+    echo "Creating sliced pdf $out_pdf starting from $st to $end"
+    # echo $slice
+
+    convert $slice $out_pdf
+
+    i=$(($end + 1))
+    i=$end
+    ipdf=$(($ipdf + 1))
+done
+
+# Concatenate PDFs
+echo "Concatenating pdfs"
+in_pdfs=$(ls -v ${out_name}_*.pdf)
+out_pdf="${out_name}.pdf"
+pdfunite $in_pdfs $out_pdf
+
+# Clean-up
+echo "Clean-up"
+rm -f $in_pdfs
