@@ -8,6 +8,6 @@ fi
 
 rm -f $HOME/installed $HOME/not-needed $HOME/not-needed-opt
 
-$HELPER -Qqe  > $HOME/installed
-$HELPER -Qdtq > $HOME/not-needed
-$HELPER -Qdttq > $HOME/not-needed-opt
+$HELPER -Qe  > $HOME/installed
+$HELPER -Qdt > $HOME/not-needed
+$HELPER -Qdtt > $HOME/not-needed-opt
