@@ -2,6 +2,8 @@
 # Create (or attach) a tmux session whose name is the current directory's name.
 
 SESSION="${PWD##*/}"
+if [ $# -eq 1 ]; then
+    SESSION="$1"
+fi
 
 tmux new-session -As "$SESSION"
-

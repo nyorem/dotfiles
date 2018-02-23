@@ -1,0 +1,38 @@
+#! /usr/bin/env python3
+
+import os
+import argparse
+
+def convert_gif(images, out="out.gif", delay=100, loop=True, verbose=False):
+    def add_quotes(str):
+        return '"' + str + '"'
+    images = map(add_quotes, images)
+    imgs = " ".join(images)
+    loop_str = "-loop 0 " if loop else ""
+    cmd = "convert -delay " + str(delay) + " " + loop_str  + imgs + " " + out
+    if verbose:
+        print(cmd)
+    os.system(cmd)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("-v", "--verbose", action="store_true",
+                        help="increase output verbosity")
+    parser.add_argument("-l", "--loop", action="store_true",
+                        help="loop the gif")
+    parser.add_argument("-d", "--delay", default=100, type=int,
+                        help="delay between frames")
+    parser.add_argument("-o", "--out", default="out.gif", type=str,
+                        help="name of the output gif")
+    parser.add_argument("image", type=str, nargs="+")
+
+    args = parser.parse_args()
+
+    verbose = args.verbose
+    loop = args.loop
+    delay = args.delay
+    out = args.out
+    images = args.image
+
+    convert_gif(images, out=out, delay=delay, loop=loop, verbose=verbose)
