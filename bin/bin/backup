@@ -2,9 +2,21 @@
 # Backup important folders using rsync.
 
 IGNORELIST="$HOME/bin/ignorelist"
-BACKUP_DIR="/run/media/$USER/Backup"
+DISKNAME="TOSHIBA EXT"
+BACKUP_DIR="/run/media/$USER/$DISKNAME/linux"
 
-time rsync --no-links -aP --delete-before --exclude-from=$IGNORELIST /home/$USER/ $BACKUP_DIR/home/$USER
-time rsync --no-links -aP --delete-before --exclude-from=$IGNORELIST /etc $BACKUP_DIR
-time rsync --no-links -aP --delete-before --exclude-from=$IGNORELIST /var $BACKUP_DIR
+if ! [ -d "$BACKUP_DIR" ]; then
+    echo "$BACKUP_DIR not present, creating it"
+    mkdir "$BACKUP_DIR"
+    mkdir "$BACKUP_DIR/home/$USER"
+fi
+
+tobackup="/etc /var"
+for d in $tobackup; do
+    echo "Syncing $d"
+    time rsync --no-links -aP --delete-before --exclude-from=$IGNORELIST "$d" "$BACKUP_DIR"
+done
+
+# TODO
+# time rsync --no-links -aP --delete-before --exclude-from=$IGNORELIST "/home/$USER/" "$BACKUP_DIR/home/$USER"
 

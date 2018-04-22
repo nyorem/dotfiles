@@ -6,8 +6,9 @@ if ! [ -z ${AURHELPER+x} ]; then
     HELPER=$AURHELPER
 fi
 
-rm -f $HOME/installed $HOME/not-needed $HOME/not-needed-opt
+rm -f $HOME/installed $HOME/not-needed $HOME/not-needed-opt $HOME/unsync
 
 $HELPER -Qe  > $HOME/installed
 $HELPER -Qdt > $HOME/not-needed
 $HELPER -Qdtt > $HOME/not-needed-opt
+$HELPER -Qm > $HOME/unsync
