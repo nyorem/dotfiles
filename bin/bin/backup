@@ -2,7 +2,7 @@
 # Backup important folders using rsync.
 
 IGNORELIST="$HOME/bin/ignorelist"
-DISKNAME="TOSHIBA EXT"
+DISKNAME="Clone"
 BACKUP_DIR="/run/media/$USER/$DISKNAME/linux"
 
 if ! [ -d "$BACKUP_DIR" ]; then
@@ -18,5 +18,5 @@ for d in $tobackup; do
 done
 
 # TODO
-# time rsync --no-links -aP --delete-before --exclude-from=$IGNORELIST "/home/$USER/" "$BACKUP_DIR/home/$USER"
+time rsync --no-links -aP --delete-before --exclude-from=$IGNORELIST "/home/$USER/" "$BACKUP_DIR/home/$USER"
 

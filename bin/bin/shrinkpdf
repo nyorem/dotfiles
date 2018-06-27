@@ -1,16 +1,38 @@
 #! /usr/bin/env bash
 # Usage: input output [resolution]
 
-in=$1
+if [ $# -ne 2 ] && [ $# -ne 3 ]; then
+    echo "Usage $0 input output [resolution]"
+    exit 1
+fi
 
-out=$2
+# Arguments
+in="$1"
+out="$2"
 
 res="300"
-if [ "$#" -eq 3 ]; then
+if [ $# -eq 3 ]; then
     res=$3
 fi
 
+if ! [ -f "$in" ]; then
+    echo "File $in does not exist!"
+    exit 1
+fi
+
+if [ -f "$out" ]; then
+    echo "File $out already exist."
+    read -p "Overwrite? [y/n]" -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        exit 0
+    fi
+fi
+
+echo "resolution=$res"
+
+# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default \
     -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages \
-    -dCompressFonts=true -r300 -sOutputFile=$out $in
+    -dCompressFonts=true -r"$res" -sOutputFile=$out $in
 
