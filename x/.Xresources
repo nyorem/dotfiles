@@ -42,7 +42,7 @@ URxvt.scrollBar:            false
 
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher,clipboard
-URxvt.url-launcher:         /usr/bin/chromium
+URxvt.url-launcher:         /usr/bin/firefox
 URxvt.matcher.button:       1
 
 ! Copy / paste

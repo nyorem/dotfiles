@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 # Usage: input output [resolution]
+# See:
+# https://askubuntu.com/questions/589862/how-to-compress-more-than-one-at-a-time-pdf-files-from-terminal
+# https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file
 
 if [ $# -ne 2 ] && [ $# -ne 3 ]; then
     echo "Usage $0 input output [resolution]"
@@ -31,6 +34,7 @@ fi
 
 echo "resolution=$res"
 
+# from the lowest to highest: screen < ebook < prepress < printer < default
 # gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default \
     -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages \
