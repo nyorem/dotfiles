@@ -2,8 +2,10 @@
 # Backup important folders using rsync.
 
 IGNORELIST="$HOME/bin/ignorelist"
-DISKNAME="Clone"
-BACKUP_DIR="/run/media/$USER/$DISKNAME/linux"
+# DISKNAME="Clone"
+# BACKUP_DIR="/run/media/$USER/$DISKNAME/linux"
+BACKUP_DIR=/run/media/nyorem/C85CCB155CCAFCE6/
+# BACKUP_DIR="/mnt/clone/linux"
 
 if ! [ -d "$BACKUP_DIR" ]; then
     echo "$BACKUP_DIR not present, creating it"
