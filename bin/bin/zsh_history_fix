@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+mv ~/.zhistory ~/.zhistory_bad
+strings .zhistory_bad > .zhistory
+zsh -c "fc -R ~/.zhistory"
+rm -f ~/.zhistory_bad
