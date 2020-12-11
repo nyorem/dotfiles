@@ -6,7 +6,6 @@
 [user]
     name = Jocelyn MEYRON
     email = Jocelyn.Meyron@insa-lyon.fr
-    ; email = Jocelyn.Meyron@ensimag.grenoble-inp.fr
 [alias]
     ci = commit
     co = checkout
@@ -38,4 +37,4 @@
 [url "git@github.com:"]
     pushInsteadOf = "gh:"
 [pull]
-	rebase = false
+    rebase = false
