@@ -3,6 +3,8 @@
 .*.swp
 backup/*
 
+bin/bin/hub
+
 xmonad/**/*.hi
 xmonad/**/*.o
 xmonad/**/*.errors
