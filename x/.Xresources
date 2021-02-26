@@ -30,8 +30,17 @@ URxvt.lineSpace:            0
 ! Fonts
 URxvt.allow_bold:           false
 /* URxvt*font: xft:Source Code Pro::style=Regular:pixelsize=13 */
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=13
-URxvt*boldFont: xft:Monospace:pixelsize=14
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=14
+URxvt*boldFont: xft:Monospace:pixelsize=15
+
+! Keyboard shortcuts to copy/paste Ctrl+Shift+C / Ctrl+Shift+V
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+! URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+! URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+! URxvt.keysym.Control-Meta-c: builtin-string:
+! URxvt.keysym.Control-Meta-v: builtin-string:
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -44,11 +53,6 @@ URxvt.scrollBar:            false
 URxvt.perl-ext-common:      default,matcher,clipboard
 URxvt.url-launcher:         /usr/bin/firefox
 URxvt.matcher.button:       1
-
-! Copy / paste
-URxvt.iso14755: False
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 ! Cursor
 URxvt.cursorBlink:          false
