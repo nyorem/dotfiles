@@ -17,7 +17,8 @@
     frm = !sh -c 'git rm `git ls-files --deleted`'
     g = grep -n --break --heading
     yolo = push -f origin master
-    update-fork = !git fetch upstream && git checkout master && git merge upstream/master
+    merge-fork = !git fetch upstream && git checkout master && git merge upstream/master
+    rebase-fork = !git fetch upstream && git checkout master && git rebase upstream/master
 [core]
     autocrlf = input
     safecflf = true
