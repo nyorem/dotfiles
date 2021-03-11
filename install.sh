@@ -2,15 +2,16 @@
 
 # Common
 stow bin
-stow browsers
+# stow browsers
 stow dircolors
 # stow emacs
 # stow fish
 stow gdb
-stow ghc
+# stow ghc
 stow gpg
 stow latex
 # stow mutt
+stow python
 # stow todotxt
 stow tmux
 stow vcs
@@ -28,6 +29,7 @@ if [ $SYSTEM = "Darwin" ]; then
     ### stow
     stow bash
     stow hydra
+    stow iterm
     stow keyremap4macbook
     # stow slate
 elif [ $SYSTEM = "Linux" ]; then
