@@ -21,6 +21,8 @@ alias gp="git push"
 alias gpu="git pull"
 alias gpr="git pull --rebase"
 alias gsu="git submodule update --init"
+alias gss="git stash"
+alias gsp="git stash pop"
 
 # {{{2 tmux
 alias tatt="tmux attach -t"
@@ -46,9 +48,12 @@ alias m="make"
 alias vim-update="vim +PlugUpgrade +PlugUpdate"
 alias open="xdg-open"
 alias del="gio trash"
+alias r="fc -s"
 
 complete -F _complete_alias s
 complete -F _complete_alias ss
+
+export EDITOR="vim"
 
 LFCD="$HOME/.config/lf/lfcd.sh"
 if [ -f "$LFCD" ]; then
