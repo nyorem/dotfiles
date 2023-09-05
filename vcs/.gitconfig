@@ -52,8 +52,8 @@
     pushInsteadOf = "gh:"
 [pull]
     rebase = false
-[tig "bind"]
-    main = = !git commit --fixup=%(commit)
-    main = <ctrl-R> !git rebase --autosquash -i %(commit)
 # [submodule]
 #     recurse = true
+[tig "bind"]
+    main = = !git commit --fixup=%(commit)
+    main = <Ctrl-R> !git rebase --autosquash -i %(commit)
