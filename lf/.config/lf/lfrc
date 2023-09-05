@@ -1,0 +1,4 @@
+cmd open $vim $fx
+map <delete> delete
+map c :unselect;clear
+map <c-a> :unselect;invert
