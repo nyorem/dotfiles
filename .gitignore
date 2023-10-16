@@ -12,3 +12,4 @@ xmonad/**/xmonad-x86_64-linux
 bin/bin/medit
 media/**/*.log
 media/.config/mpv/watch_later
+bash/.bash_aliases_private
