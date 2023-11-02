@@ -126,5 +126,11 @@ source ~/.bash_completion.d/git-completion
 complete -F _complete_alias s
 complete -F _complete_alias ss
 
+complete -F _complete_alias g
+complete -F _complete_alias gco
+complete -F _complete_alias gp
+complete -F _complete_alias gpr
+complete -F _complete_alias gpu
+
 # {{{1 PRIVATE
 [ -s "$HOME/.bash_aliases_private" ] && source "$HOME/.bash_aliases_private"
