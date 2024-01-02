@@ -1,6 +1,8 @@
 {
     "cmake.automaticReconfigure": false,
     "cmake.configureOnOpen": false,
+    "cmake.generator": "Unix Makefiles",
+    "cmake.options.statusBarVisibility": "visible",
     "cmake.configureSettings": {
         "ENABLE_STANDALONE": true,
         "ENABLE_CDS": false,
@@ -14,6 +16,7 @@
         "ENABLE_OCPP16": true,
     },
     "cmake.parallelJobs": 7,
+    "cmake.showOptionsMovedNotification": false,
     "explorer.confirmDelete": false,
     "explorer.excludeGitIgnore": true,
     "editor.cursorBlinking": "solid",
@@ -22,10 +25,13 @@
     "security.workspace.trust.untrustedFiles": "open",
     "vim.handleKeys": {
         "<C-b>": false, // toggle sidebar
-        "<C-c>": false, // copy to clipboard
-        "<C-p>": false, // find file in project
+        "<C-c>": true, // copy to clipboard
         "<C-d>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
+        "<C-f>": false, // find
+        "<C-h>": false, // find and replace
+        "<C-p>": false, // find files in project
         "<C-u>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
+        "<C-x>": false, // cut
     },
     "vim.leader": " ",
     "vim.insertModeKeyBindings": [
@@ -50,10 +56,6 @@
         {
             "before": ["Y"],
             "after": ["y", "$"],
-        },
-        {
-            "before": ["<left>"],
-            "after": ["workbench.action.previousEditor"],
         },
     ],
     "vim.visualModeKeyBindings": [
