@@ -1,0 +1,72 @@
+{
+    "cmake.automaticReconfigure": false,
+    "cmake.configureOnOpen": false,
+    "cmake.configureSettings": {
+        "ENABLE_STANDALONE": true,
+        "ENABLE_CDS": false,
+        "ENABLE_TEST": true,
+        "ENABLE_RUN_TESTS_AFTER_BUILD": false,
+        "ENABLE_SRR": true,
+        "ENABLE_DM": true,
+        "REST_API_VERSION": 2,
+        "ENABLE_GTEST_DISCOVER": true,
+        "ENABLE_EVCI": true,
+        "ENABLE_OCPP16": true,
+    },
+    "cmake.parallelJobs": 7,
+    "explorer.confirmDelete": false,
+    "explorer.excludeGitIgnore": true,
+    "editor.cursorBlinking": "solid",
+    "editor.wordWrap": "on",
+    "files.eol": "\n",
+    "security.workspace.trust.untrustedFiles": "open",
+    "vim.handleKeys": {
+        "<C-b>": false, // toggle sidebar
+        "<C-c>": false, // copy to clipboard
+        "<C-p>": false, // find file in project
+        "<C-d>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
+        "<C-u>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
+    },
+    "vim.leader": " ",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["<C-d>"],
+            "commands": ["editor.action.addSelectionToNextFindMatch"],
+        },
+        {
+            "before": ["<C-u>"],
+            "commands": ["cursorUndo"],
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["g", "j"],
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"],
+        },
+        {
+            "before": ["Y"],
+            "after": ["y", "$"],
+        },
+        {
+            "before": ["<left>"],
+            "after": ["workbench.action.previousEditor"],
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<C-d>"],
+            "commands": ["editor.action.addSelectionToNextFindMatch"],
+        },
+        {
+            "before": ["<C-u>"],
+            "commands": ["cursorUndo"],
+        }
+    ],
+    "vim.startInInsertMode": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.iconTheme": "vscode-icons",
+}
