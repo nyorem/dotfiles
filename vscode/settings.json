@@ -29,6 +29,7 @@
         "<C-d>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
         "<C-f>": false, // find
         "<C-h>": false, // find and replace
+        "<C-k>": false, // vscode action shortcut
         "<C-p>": false, // find files in project
         "<C-u>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
         "<C-x>": false, // cut
@@ -57,6 +58,10 @@
             "before": ["Y"],
             "after": ["y", "$"],
         },
+        {
+            "before": ["K"],
+            "commands": ["editor.action.showHover"],
+        },
     ],
     "vim.visualModeKeyBindings": [
         {
@@ -68,7 +73,7 @@
             "commands": ["cursorUndo"],
         }
     ],
-    "vim.startInInsertMode": true,
-    "vsicons.dontShowNewVersionMessage": true,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.startupEditor": "none",
+    "cmake.configureOnEdit": false,
 }
