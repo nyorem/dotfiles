@@ -48,6 +48,7 @@ alias gsp="git stash pop"
 alias gsc="git stash clear"
 # alias gcf="git clang-format --staged --style=file -q --diff"
 alias gcf="git clang-format --staged --style=file -q"
+alias tig="tig status"
 
 # {{{2 vim
 alias vimgit="vim +G +only"
