@@ -2,7 +2,6 @@
     "cmake.automaticReconfigure": false,
     "cmake.configureOnOpen": false,
     "cmake.generator": "Unix Makefiles",
-    "cmake.options.statusBarVisibility": "visible",
     "cmake.configureSettings": {
         "ENABLE_STANDALONE": true,
         "ENABLE_CDS": false,
@@ -16,6 +15,8 @@
         "ENABLE_OCPP16": true,
     },
     "cmake.parallelJobs": 7,
+    "cmake.options.statusBarVisibility": "compact",
+    "cmake.showConfigureWithDebuggerNotification": false,
     "cmake.showOptionsMovedNotification": false,
     "explorer.confirmDelete": false,
     "explorer.excludeGitIgnore": true,
@@ -25,12 +26,12 @@
     "security.workspace.trust.untrustedFiles": "open",
     "vim.handleKeys": {
         "<C-b>": false, // toggle sidebar
-        "<C-c>": true, // copy to clipboard
+        "<C-c>": false, // copy to clipboard
         "<C-d>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
         "<C-f>": false, // find
         "<C-h>": false, // find and replace
         "<C-k>": false, // vscode action shortcut
-        "<C-p>": false, // find files in project
+        "<C-p>": false, // find file in project
         "<C-u>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
         "<C-x>": false, // cut
     },
@@ -73,7 +74,12 @@
             "commands": ["cursorUndo"],
         }
     ],
-    "workbench.colorTheme": "Default Dark Modern",
+    "vim.startInInsertMode": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "none",
-    "cmake.configureOnEdit": false,
+    "git.allowForcePush": true,
+    "bitbake.pathToBitbakeFolder": "${workspaceFolder}/poky/bitbake",
+    "bitbake.pathToBuildFolder": "${workspaceFolder}/../build",
+    "bitbake.pathToEnvScript": "${workspaceFolder}/poky/oe-init-build-env",
 }
