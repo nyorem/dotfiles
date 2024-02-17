@@ -60,3 +60,5 @@
     main = <Ctrl-R> !git rebase --autosquash -i %(commit)
     main = <Ctrl-S> ! git rebase -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
     generic = S view-main
+[rerere]
+	enabled = true

@@ -1,6 +1,7 @@
 {
     "cmake.automaticReconfigure": false,
     "cmake.configureOnOpen": false,
+    "cmake.configureOnEdit": false,
     "cmake.generator": "Unix Makefiles",
     "cmake.configureSettings": {
         "ENABLE_STANDALONE": true,
