@@ -52,13 +52,13 @@
 [url "git@github.com:"]
     pushInsteadOf = "gh:"
 [pull]
-    rebase = false
-# [submodule]
-#     recurse = true
+    rebase = true
+[rerere]
+    enabled = true
+[branch]
+    sort = -committerdate
 [tig "bind"]
     main = = !git commit --fixup=%(commit)
     main = <Ctrl-R> !git rebase --autosquash -i %(commit)
     main = <Ctrl-S> ! git rebase -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
     generic = S view-main
-[rerere]
-	enabled = true
