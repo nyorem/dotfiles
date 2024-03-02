@@ -13,8 +13,13 @@ alias ss="sudo apt-get -f"
 alias e="nvim"
 alias o="open"
 
-alias ll="ls -l"
-alias la="ls -a"
+alias ls="exa"
+alias ll="exa -l"
+alias la="exa -a"
+alias tree="exa --tree"
+alias cd="z"
+alias zz="z -"
+alias cat="bat"
 
 # https://unix.stackexchange.com/questions/162131/is-this-a-good-way-to-create-a-patch
 alias makediff="diff -Naur"
@@ -134,6 +139,17 @@ complete -F _complete_alias gco
 complete -F _complete_alias gp
 complete -F _complete_alias gpr
 complete -F _complete_alias gpu
+
+
+[ -s "$HOME/.cargo/env" ] && \. "$HOME/.cargo/env"
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval "$(zoxide init bash)"
 
 # {{{1 PRIVATE
 [ -s "$HOME/.bash_aliases_private" ] && source "$HOME/.bash_aliases_private"
