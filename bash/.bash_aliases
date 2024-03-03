@@ -4,7 +4,7 @@ export PATH="$HOME/.cargo/bin:$PATH" # Rust
 export PATH="$HOME/dev/bin:$PATH" # personal scripts
 export PATH="$HOME/.config/emacs/bin:$PATH" # Doomemacs
 
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # {{{1 Aliases
 # {{{2 Common
@@ -74,7 +74,7 @@ alias ct="cargo test"
 lf () {
     local tmp="$(mktemp)"
     command lf -command "map <c-w> \$echo \$PWD > $tmp; lf -remote \"send \$id quit\"" "$@"
-    cd "$(cat "$tmp")" || return
+    builtin cd "$(/usr/bin/cat "$tmp")" || return
     rm -f "$tmp"
 }
 
@@ -148,6 +148,15 @@ complete -F _complete_alias gpu
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# {{{1 WSL
+if uname -r | grep -q "microsoft"; then
+  PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
+
+  explorer() {
+    explorer.exe $(wslpath -w "$1")
+  }
+fi
 
 eval "$(zoxide init bash)"
 

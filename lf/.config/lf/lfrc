@@ -1,4 +1,18 @@
+# set ignorecase true
+
 cmd open $nvim $fx
 map <delete> delete
-map c :unselect;clear
+map <esc> :unselect;clear
+
 map <c-a> :unselect;invert
+map <c-f> search
+map <c-n> search-next
+map <c-q> quit
+
+map <f-2> rename
+
+# cmd sbt :set reverse!; set sortby time; set info time; map <c-s> sbs;
+# cmd sbs :set sortby size; set info size; map <c-s> sbn;
+# cmd sbn :set reverse!; set sortby natural; set info;  map <c-s> sbt;
+# map <c-s> sbt
+
