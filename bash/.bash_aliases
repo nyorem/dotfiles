@@ -10,16 +10,31 @@ export EDITOR="nvim"
 # {{{2 Common
 alias s="sudo apt-get"
 alias ss="sudo apt-get -f"
-alias e="nvim"
+
+if [ -x "$(command -v nvim)" ]; then
+  alias e="nvim"
+fi
+
 alias o="open"
 
-alias ls="exa"
-alias ll="exa -l"
-alias la="exa -a"
-alias tree="exa --tree"
-alias cd="z"
-alias zz="z -"
-alias cat="bat"
+if [ -x "$(command -v exa)" ]; then
+  alias ls="exa"
+  alias ll="exa -l"
+  alias la="exa -a"
+  alias tree="exa --tree"
+else
+  alias ll="ls -l"
+  alias la="ls -a"
+fi
+
+if [ -x "$(command -v zoxide)" ]; then
+  alias cd="z"
+  alias zz="z -"
+fi
+
+if [ -x "$(command -v bat)" ]; then
+  alias cat="bat"
+fi
 
 # https://unix.stackexchange.com/questions/162131/is-this-a-good-way-to-create-a-patch
 alias makediff="diff -Naur"
@@ -158,7 +173,9 @@ if uname -r | grep -q "microsoft"; then
   }
 fi
 
-eval "$(zoxide init bash)"
+if [ -x "$(command -v zoxide)" ]; then
+  eval "$(zoxide init bash)"
+fi
 
 # {{{1 PRIVATE
 [ -s "$HOME/.bash_aliases_private" ] && source "$HOME/.bash_aliases_private"
