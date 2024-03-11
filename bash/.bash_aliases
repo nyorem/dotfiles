@@ -5,11 +5,14 @@ export PATH="$HOME/dev/bin:$PATH" # personal scripts
 export PATH="$HOME/.config/emacs/bin:$PATH" # Doomemacs
 
 export EDITOR="nvim"
+export VISUAL="$EDITOR"
+export GIT_EDITOR="$EDITOR"
 
 # {{{1 Aliases
 # {{{2 Common
 alias s="sudo apt-get"
 alias ss="sudo apt-get -f"
+alias vimdiff="nvim -d"
 
 if [ -x "$(command -v nvim)" ]; then
   alias e="nvim"
@@ -33,7 +36,7 @@ if [ -x "$(command -v zoxide)" ]; then
 fi
 
 if [ -x "$(command -v bat)" ]; then
-  alias cat="bat"
+  alias cat="bat --style=changes"
 fi
 
 # https://unix.stackexchange.com/questions/162131/is-this-a-good-way-to-create-a-patch

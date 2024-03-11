@@ -37,12 +37,18 @@
     editor = vim
 [diff]
     renames = true
-    tool = meld
+    tool = nvimdiff
+[difftool]
+    prompt = false
 [push]
     default = current
 [merge]
-    tool = vimdiff
-    # conflictstyle = diff3
+    tool = fugitive
+    conflictstyle = diff3
+[mergetool]
+    prompt = false
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [rebase]
     autoStash = true
 [credential]
