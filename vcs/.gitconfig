@@ -44,7 +44,7 @@
     default = current
 [merge]
     tool = fugitive
-    conflictstyle = diff3
+    # conflictstyle = diff3
 [mergetool]
     prompt = false
 [mergetool "fugitive"]

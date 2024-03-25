@@ -36,7 +36,7 @@ if [ -x "$(command -v zoxide)" ]; then
 fi
 
 if [ -x "$(command -v bat)" ]; then
-  alias cat="bat --style=changes"
+  alias cat="bat --style=changes --paging=never"
 fi
 
 # https://unix.stackexchange.com/questions/162131/is-this-a-good-way-to-create-a-patch
