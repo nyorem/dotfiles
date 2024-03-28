@@ -169,6 +169,7 @@ complete -F _complete_alias gpu
 
 # {{{1 WSL
 if uname -r | grep -q "microsoft"; then
+  # https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
   PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
 
   explorer() {

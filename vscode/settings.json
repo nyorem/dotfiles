@@ -24,6 +24,8 @@
     "editor.cursorBlinking": "solid",
     "editor.wordWrap": "on",
     "files.eol": "\n",
+    "git.allowForcePush": true,
+    "git.confirmSync": false,
     "security.workspace.trust.untrustedFiles": "open",
     "vim.handleKeys": {
         "<C-b>": false, // toggle sidebar
@@ -31,6 +33,7 @@
         "<C-d>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
         "<C-f>": false, // find
         "<C-h>": false, // find and replace
+        "<C-j>": false, // toggle bottom pane
         "<C-k>": false, // vscode action shortcut
         "<C-p>": false, // find file in project
         "<C-u>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
@@ -79,8 +82,9 @@
     "vsicons.dontShowNewVersionMessage": true,
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "none",
-    "git.allowForcePush": true,
     "bitbake.pathToBitbakeFolder": "${workspaceFolder}/poky/bitbake",
     "bitbake.pathToBuildFolder": "${workspaceFolder}/../build",
     "bitbake.pathToEnvScript": "${workspaceFolder}/poky/oe-init-build-env",
+    "scm.repositories.sortOrder": "name",
+    "scm.repositories.visible": 0,
 }
