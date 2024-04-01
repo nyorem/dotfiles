@@ -20,6 +20,7 @@
     "cmake.showConfigureWithDebuggerNotification": false,
     "cmake.showOptionsMovedNotification": false,
     "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
     "explorer.excludeGitIgnore": true,
     "editor.cursorBlinking": "solid",
     "editor.wordWrap": "on",
@@ -28,6 +29,7 @@
     "git.confirmSync": false,
     "security.workspace.trust.untrustedFiles": "open",
     "vim.handleKeys": {
+        "<C-a>": false, // select all
         "<C-b>": false, // toggle sidebar
         "<C-c>": false, // copy to clipboard
         "<C-d>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
@@ -37,6 +39,7 @@
         "<C-k>": false, // vscode action shortcut
         "<C-p>": false, // find file in project
         "<C-u>": true, // see https://github.com/VSCodeVim/Vim/issues/2144 for a workaround for using multiple cursors and vim shortcuts
+        "<C-w>": false, // close current window
         "<C-x>": false, // cut
     },
     "vim.leader": " ",
@@ -67,16 +70,6 @@
             "before": ["K"],
             "commands": ["editor.action.showHover"],
         },
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": ["<C-d>"],
-            "commands": ["editor.action.addSelectionToNextFindMatch"],
-        },
-        {
-            "before": ["<C-u>"],
-            "commands": ["cursorUndo"],
-        }
     ],
     "vim.startInInsertMode": false,
     "vsicons.dontShowNewVersionMessage": true,
