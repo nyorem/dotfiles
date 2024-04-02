@@ -4,19 +4,34 @@ export PATH="$HOME/.cargo/bin:$PATH" # Rust
 export PATH="$HOME/dev/bin:$PATH" # personal scripts
 export PATH="$HOME/.config/emacs/bin:$PATH" # Doomemacs
 
-export EDITOR="nvim"
-export VISUAL="$EDITOR"
-export GIT_EDITOR="$EDITOR"
-
 # {{{1 Aliases
 # {{{2 Common
 alias s="sudo apt-get"
 alias ss="sudo apt-get -f"
-alias vimdiff="nvim -d"
 
 if [ -x "$(command -v nvim)" ]; then
-  alias e="nvim"
+  alias vimdiff="nvim -d"
+  export EDITOR="nvim"
+else
+  export EDITOR="vim"
 fi
+
+export VISUAL="$EDITOR"
+export GIT_EDITOR="$EDITOR"
+
+# make vim know how to open a filename with a :line:column specifier
+function e {
+  # see https://stackoverflow.com/questions/26733668/vim-interpret-argument-with-colons-as-filenamelinecolumn
+  local args
+  IFS=':' read -a args <<< "$1"
+  if [ -z "${args[1]}" ]; then
+    args[1]="1"
+  fi
+  if [ -z "${args[2]}" ]; then
+    args[2]="1"
+  fi
+  "$EDITOR" "${args[0]}" -c "norm!${args[1]}G0${args[2]}|"
+}
 
 alias o="open"
 
@@ -145,7 +160,7 @@ format-all()
   find . -iname *.hpp -o -iname *.cpp | xargs clang-format -i -style=file
 }
 
-# {{{1 bash completions
+# {{{1 bash stuff
 source ~/.bash_completion.d/complete_alias
 source ~/.bash_completion.d/git-completion
 
@@ -166,6 +181,10 @@ complete -F _complete_alias gpu
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# make sure history is saved on each command
+shopt -s histappend
+PROMPT_COMMAND="$PROMPT_COMMAND;history -a;history -c;history -r"
 
 # {{{1 WSL
 if uname -r | grep -q "microsoft"; then
