@@ -50,10 +50,6 @@ if [ -x "$(command -v zoxide)" ]; then
   alias zz="z -"
 fi
 
-if [ -x "$(command -v bat)" ]; then
-  alias cat="bat --style=changes --paging=never"
-fi
-
 # https://unix.stackexchange.com/questions/162131/is-this-a-good-way-to-create-a-patch
 alias makediff="diff -Naur"
 alias makerdiff="diff -crB"
@@ -181,6 +177,9 @@ complete -F _complete_alias gpu
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # make sure history is saved on each command
 shopt -s histappend

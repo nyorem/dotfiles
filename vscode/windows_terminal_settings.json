@@ -123,6 +123,17 @@
         [
             {
                 "bellStyle": "none",
+                "colorScheme": "One Half Dark",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu -u eaton",
+                "guid": "{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc",
+                "startingDirectory": "~",
+                "tabTitle": "Ubuntu"
+            },
+            {
+                "bellStyle": "none",
                 "colorScheme": "Ubuntu-22.04-ColorScheme",
                 "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-WSL1 -e /home/eaton/dev/bin/picocom -b 115200 /dev/ttyS26",
                 "guid": "{3e167a55-295c-575a-be3e-1f7080229fc3}",
@@ -152,17 +163,6 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": true,
                 "name": "Invite de commandes"
-            },
-            {
-                "bellStyle": "none",
-                "colorScheme": "One Half Dark",
-                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu -u eaton",
-                "guid": "{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc",
-                "startingDirectory": "~",
-                "tabTitle": "Ubuntu"
             }
         ]
     },

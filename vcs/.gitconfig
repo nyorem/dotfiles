@@ -19,6 +19,7 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue(%an)%Creset' --abbrev-commit --date=relative
     oops = reset --soft HEAD^1
     drop = reset --hard
+    rr = -c commit.verbose=true rebase
     ri = rebase -i
     rc = rebase --continue
     rs = rebase --skip
@@ -67,6 +68,6 @@
     sort = -committerdate
 [tig "bind"]
     main = = !git commit --fixup=%(commit)
-    main = <Ctrl-R> !git rebase --autosquash -i %(commit)
-    main = <Ctrl-S> ! git rebase -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
+    main = <Ctrl-R> !git rr --autosquash -i %(commit)
+    main = <Ctrl-S> ! git rr -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
     generic = S view-main
