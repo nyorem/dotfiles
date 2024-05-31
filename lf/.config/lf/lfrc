@@ -2,6 +2,8 @@ set ignorecase true
 set smartpaste true
 
 cmd open $nvim "$fx"
+cmd touch %touch "$1"
+cmd mkdir %mkdir "$1"
 
 map <delete> delete
 map <esc> :unselect;clear
