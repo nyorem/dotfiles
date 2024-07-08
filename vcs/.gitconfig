@@ -9,6 +9,7 @@
 [helper]
     helper = manager-core
 [alias]
+    browse = !gh repo view --web
     ci = commit
     co = checkout
     cp = cherry-pick

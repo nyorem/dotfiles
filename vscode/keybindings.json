@@ -11,4 +11,8 @@
         "key": "f6",
         "command": "cmake.configure",
     },
+    {
+        "key": "f5",
+        "command": "cmake.debugTarget",
+    },
 ]
