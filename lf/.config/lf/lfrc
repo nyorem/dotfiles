@@ -1,6 +1,8 @@
 set ignorecase true
 set smartpaste true
 
+set previewer ~/.config/lf/pv.sh
+
 cmd open $nvim "$fx"
 cmd touch %touch "$1"
 cmd mkdir %mkdir "$1"
