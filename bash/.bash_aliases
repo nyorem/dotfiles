@@ -1,7 +1,8 @@
 # {{{1 Environment variables
 export PATH="$HOME/.local/bin:$PATH" # Python local binaries
 export PATH="$HOME/.cargo/bin:$PATH" # Rust
-export PATH="$HOME/dev/bin:$PATH" # personal scripts
+export PATH="$HOME/dev/bin:$PATH" # custom scripts
+export PATH="$HOME/bin:$PATH" # custom scripts
 export PATH="$HOME/.config/emacs/bin:$PATH" # Doomemacs
 
 # {{{1 Aliases
@@ -59,11 +60,13 @@ alias r="fc -s"
 
 alias ..="cd .."
 alias ...="cd ../.."
+alias :wq="exit"
 
 alias python="python3"
 alias py="python3 -i"
 
 alias m="make"
+alias mm="make -j7"
 alias maek="make"
 
 # {{{2 git
@@ -85,6 +88,10 @@ alias gsc="git stash clear"
 # alias gcf="git clang-format --staged --style=file -q --diff"
 alias gcf="git clang-format --staged --style=file -q"
 alias tig="tig status"
+
+if [ -x "$(command -v lazygit)" ]; then
+  alias gg="lazygit"
+fi
 
 # {{{2 vim
 alias vimgit="vim +G +only"
@@ -193,6 +200,8 @@ if uname -r | grep -q "microsoft"; then
   explorer() {
     explorer.exe $(wslpath -w "$1")
   }
+  alias open="explorer"
+  alias o="explorer"
 fi
 
 if [ -x "$(command -v zoxide)" ]; then

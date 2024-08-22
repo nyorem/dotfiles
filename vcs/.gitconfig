@@ -50,7 +50,7 @@
 [mergetool]
     prompt = false
 [mergetool "fugitive"]
-	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+    cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [rebase]
     autoStash = true
 [credential]

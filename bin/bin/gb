@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# source: https://gist.github.com/soulim/2c0364d411f8e6a8a470a56a66d4d07d
+#
+set -o errexit   # Always exit on error
+set -o nounset   # Treat unset variables as errors
+
+# List all git branches (including remote) except current and HEAD.
+# Additionally remove all leading spaces for each line of the list.
+branches=$(git branch --all | grep --invert-match --extended-regexp "^\*|HEAD" | sed "s/.* //")
+
+# Select a branch to switch to using interactive fuzzy search applied to
+# the list of branches.
+#
+# If one of remote branches is selected, then remove `remotes/*/` prefix
+# from the name, e.g. `remotes/origin/foo-bar` becomes `foo-bar`
+branch=$(echo "$branches" | fzf --height=30% | sed "s#remotes/[^/]*/##")
+
+# Switch to a selected branch.
+if [[ -n "$branch" ]]
+then
+  git checkout "$branch"
+fi
