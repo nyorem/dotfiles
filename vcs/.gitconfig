@@ -72,3 +72,4 @@
     main = <Ctrl-R> !git rr --autosquash -i %(commit)
     main = <Ctrl-S> ! git rr -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
     generic = S view-main
+    status = a !?git commit --amend
