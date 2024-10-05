@@ -33,6 +33,7 @@
     rebase-fork = !git fetch upstream && git checkout master && git rebase upstream/master
     changelog = ! git commit -m 'chore: update CHANGELOG'
     rebase-last-merge = ! git rebase -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
+    work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
 [core]
     autocrlf = input
     safecflf = true

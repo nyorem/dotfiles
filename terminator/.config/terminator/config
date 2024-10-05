@@ -1,0 +1,22 @@
+[global_config]
+[keybindings]
+  split_horiz = <Primary><Alt>h
+  split_vert = <Primary><Alt>v
+[profiles]
+  [[default]]
+    show_titlebar = false
+    background_color = "#2c001e"
+    foreground_color = "#f3f3f3"
+    scrollback_infinite = True
+    palette = "#171421:#c01c28:#26a269:#a2734c:#3584e4:#a347ba:#2aa1b3:#d0cfcc:#5e5c64:#f66151:#33d17a:#e9ad0c:#99c1f1:#c061cb:#33c7de:#ffffff"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 1400, 800
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
