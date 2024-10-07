@@ -176,21 +176,24 @@ complete -F _complete_alias gp
 complete -F _complete_alias gpr
 complete -F _complete_alias gpu
 
-
 [ -s "$HOME/.cargo/env" ] && \. "$HOME/.cargo/env"
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(fzf --bash)"
 
-if [ -f ~/fzf-git.sh/fzf-git.sh ]; then
-  source ~/fzf-git.sh/fzf-git.sh
-fi
-
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+_fzf_compgen_path() {
+    rg --files --glob "!.git" . "$1"
+}
+
+# https://github.com/BurntSushi/ripgrep/issues/169
+_fzf_compgen_dir() {
+	rg --hidden --files --glob "!.git" --null "$1" 2>/dev/null | xargs -0 dirname | awk '!h[$0]++'
+}
+
+# Set up completion for custom commands/aliases
+_fzf_setup_completion path e
 
 # make sure history is saved on each command
 shopt -s histappend
