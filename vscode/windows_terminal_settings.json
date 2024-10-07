@@ -103,7 +103,7 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}",
+    "defaultProfile": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
     "disableAnimations": true,
     "focusFollowMouse": false,
     "launchMode": "maximized",
@@ -125,12 +125,14 @@
                 "bellStyle": "none",
                 "colorScheme": "One Half Dark",
                 "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu -u eaton",
-                "guid": "{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}",
+                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
                 "hidden": false,
                 "name": "Ubuntu",
+                "opacity": 100,
                 "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc",
                 "startingDirectory": "~",
-                "tabTitle": "Ubuntu"
+                "tabTitle": "Ubuntu",
+                "useAcrylic": false
             },
             {
                 "bellStyle": "none",
@@ -149,7 +151,7 @@
                 "hidden": false,
                 "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
                 "name": "Simulator",
-                "startingDirectory": "~/dev/etn-evci-evsesimulator",
+                "startingDirectory": "~/dev/etn-evci-evse/evsesimulator",
                 "tabTitle": "Simulator"
             },
             {

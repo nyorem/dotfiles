@@ -1,76 +1,80 @@
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
 [user]
-    name = Meyron, Jocelyn
-    email = JocelynMeyron@eaton.com
+	name = Meyron, Jocelyn
+	email = JocelynMeyron@eaton.com
 [helper]
-    helper = manager-core
+	helper = manager-core
 [alias]
-    browse = !gh repo view --web
-    ci = commit
-    co = checkout
-    cp = cherry-pick
-    f = fetch -p
-    st = status
-    br = branch
-    f = fetch -p
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue(%an)%Creset' --abbrev-commit --date=relative
-    oops = reset --soft HEAD^1
-    drop = reset --hard
-    rr = -c commit.verbose=true rebase
-    ri = rebase -i
-    rc = rebase --continue
-    rs = rebase --skip
-    ra = rebase --abort
-    frm = !sh -c 'git rm `git ls-files --deleted`'
-    g = grep -n --break --heading
-    su = submodule update --init
-    yolo = push -f origin master
-    merge-fork = !git fetch upstream && git checkout master && git merge upstream/master
-    rebase-fork = !git fetch upstream && git checkout master && git rebase upstream/master
-    changelog = ! git commit -m 'chore: update CHANGELOG'
-    rebase-last-merge = ! git rebase -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
-    work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
+	browse = !gh repo view --web
+	ci = commit
+	co = checkout
+	cp = cherry-pick
+	f = fetch -p
+	st = status
+	br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue(%an)%Creset' --abbrev-commit --date=relative
+	oops = reset --soft HEAD^1
+	drop = reset --hard
+	rr = -c commit.verbose=true rebase
+	ri = rebase -i
+	rc = rebase --continue
+	rs = rebase --skip
+	ra = rebase --abort
+	frm = !sh -c 'git rm `git ls-files --deleted`'
+	g = grep -n --break --heading
+	su = submodule update --init
+	yolo = push -f origin master
+	merge-fork = !git fetch upstream && git checkout master && git merge upstream/master
+	rebase-fork = !git fetch upstream && git checkout master && git rebase upstream/master
+	changelog = ! git commit -m 'chore: update CHANGELOG'
+	rebase-last-merge = ! git rebase -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
+	work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
 [core]
-    autocrlf = input
-    safecflf = true
-    editor = vim
+	autocrlf = input
+	safecflf = true
+	editor = vim
 [diff]
-    renames = true
-    tool = nvimdiff
+	renames = true
+	tool = nvimdiff
 [difftool]
-    prompt = false
+	prompt = false
 [push]
-    default = current
+	default = current
 [merge]
-    tool = fugitive
-    # conflictstyle = diff3
+	tool = fugitive
 [mergetool]
-    prompt = false
+	prompt = false
+	keepBackup = false
 [mergetool "fugitive"]
-    cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[mergetool "nvimdiff4"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[mergetool "diffview"]
+	cmd = nvim -f -c \"DiffviewOpen\"
 [rebase]
-    autoStash = true
+	autoStash = true
 [credential]
-    helper = store
+	helper = store
 [url "https://aur.archlinux.org/"]
-    insteadOf = "aur:"
+	insteadOf = "aur:"
 [url "https://github/"]
-    insteadOf = "gh:"
+	insteadOf = "gh:"
 [url "git@github.com:"]
-    pushInsteadOf = "gh:"
+	pushInsteadOf = "gh:"
+	pushInsteadOf = "https://github.com/"
 [pull]
-    rebase = true
+	rebase = true
 [rerere]
-    enabled = true
+	enabled = true
 [branch]
-    sort = -committerdate
+	sort = -committerdate
 [tig "bind"]
-    main = = !git commit --fixup=%(commit)
-    main = <Ctrl-R> !git rr --autosquash -i %(commit)
-    main = <Ctrl-S> ! git rr -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
-    generic = S view-main
-    status = a !?git commit --amend
+	main = = !git commit --fixup=%(commit)
+	main = <Ctrl-R> !git rr --autosquash -i %(commit)
+	main = <Ctrl-S> ! git rr -i --autosquash `git log --pretty=format:"%H" --merges -n 1`
+	generic = S view-main
+	status = a !?git commit --amend

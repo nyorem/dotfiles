@@ -76,12 +76,16 @@
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "none",
     "bitbake.pathToBitbakeFolder": "${workspaceFolder}/poky/bitbake",
-    "scm.repositories.sortOrder": "name",
     "bitbake.parseOnSave": false,
-    "scm.repositories.visible": 0,
-    "cmake.skipConfigureIfCachePresent": true,
     "bitbake.commandWrapper": "kas shell -c",
     "bitbake.workingDirectory": "${workspaceFolder}/..",
+    "scm.repositories.sortOrder": "name",
+    "scm.repositories.visible": 0,
+    "cmake.skipConfigureIfCachePresent": true,
     "githubPullRequests.commentExpandState": "collapseAll",
     "githubPullRequests.pullBranch": "never",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
 }
