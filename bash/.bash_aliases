@@ -209,6 +209,8 @@ if uname -r | grep -q "microsoft"; then
   }
   alias open="explorer"
   alias o="explorer"
+else
+  alias clip="xclip -selection clipboard"
 fi
 
 if [ -x "$(command -v zoxide)" ]; then
