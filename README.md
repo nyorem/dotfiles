@@ -36,9 +36,18 @@ See:
 
 ## How to install?
 
-- Dependencies: `stow`:
-    - on OSX with `Homebrew`: `brew install stow`
-    - on Ubuntu derivatives: `sudo apt-get install stow`
+- Dependencies:
+    - `stow`:
+        - on OSX with `Homebrew`: `brew install stow`
+        - on Ubuntu derivatives: `sudo apt-get install stow`
+    - for the `bash` configuration:
+        - [ripgrep](https://github.com/BurntSushi/ripgrep): `ripgrep` package on Ubuntu
+        - [fzf](https://github.com/junegunn/fzf): grab the latest [binary release](https://github.com/junegunn/fzf/releases)
+        - [fd](https://github.com/sharkdp/fd): `fd-find` package on Ubuntu
+        - [zoxide](https://github.com/ajeetdsouza/zoxide): `curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh`
+        - [exa](https://github.com/ogham/exa): `exa` package on Ubuntu
+        - [lf](https://github.com/gokcehan/lf): I am using [this](https://github.com/vincentpinet/lf) fork
+        - [wslu](https://github.com/wslutilities/wslu): `ubuntu-wsl` package on Ubuntu
 - Clone : `cd && git clone https://github.com/nyorem/dotfiles`
 - Symlink : `cd dotfiles && ./install.sh`
 

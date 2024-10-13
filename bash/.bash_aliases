@@ -95,7 +95,7 @@ fi
 
 # {{{2 vim
 alias vimgit="vim +G +only"
-alias vim-update="vim +PlugUpgrade +PlugUpdate"
+alias vim-update="vim +PlugUpgrade +PlugUpdate && nvim +PlugUpdate"
 
 # {{{2 tmux
 alias tatt="tmux attach -t"
@@ -184,12 +184,12 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 _fzf_compgen_path() {
-    rg --files --glob "!.git" . "$1"
+  fd --hidden --follow --exclude ".git" . "$1"
 }
 
 # https://github.com/BurntSushi/ripgrep/issues/169
 _fzf_compgen_dir() {
-	rg --hidden --files --glob "!.git" --null "$1" 2>/dev/null | xargs -0 dirname | awk '!h[$0]++'
+  rg --hidden --files --glob "!.git" --null "$1" 2>/dev/null | xargs -0 dirname | awk '!h[$0]++'
 }
 
 # Set up completion for custom commands/aliases
