@@ -44,6 +44,9 @@ function __prompt_command() {
     fi
 
     PS1+="${green}\u@\h${reset}:${blue}\w${reset}\$ "
+
+    # Set terminal title
+    echo -ne "\e]0;$(basename $PWD)\a"
 }
 
 # enable color support of ls and also add handy aliases
