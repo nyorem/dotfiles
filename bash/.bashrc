@@ -39,6 +39,17 @@ function __prompt_command() {
     local red='\[\e[1;31m\]'
     local reset='\[\e[0m\]'
 
+    # Test if inside Yocto environment
+    if [ -n "$BBPATH" ]; then
+	PS1+="(yocto) "
+    fi
+
+    # Test if inside Python virtualenv
+    if [ -n "$VIRTUAL_ENV_PROMPT" ]; then
+	PS1+="(venv) "
+    fi
+
+    # Add exit code
     if [ $EXIT != 0 ]; then
 	PS1+="${red}[${EXIT}]${reset} "
     fi
