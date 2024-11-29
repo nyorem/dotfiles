@@ -66,8 +66,10 @@ alias python="python3"
 alias py="python3 -i"
 
 alias m="make"
-alias mm="make -j7"
 alias maek="make"
+function mm() {
+  make -j7 $*
+}
 
 # {{{2 git
 alias g="git"
