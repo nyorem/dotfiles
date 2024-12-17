@@ -65,7 +65,53 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias less='less -R'
+    alias diff='diff --color'
+
+    # Color for manpages in less makes manpages a little easier to read
+
+    # $(tput setaf x):          man terminfo (then search COLOR_BLACK)
+    # LESS_TERMCAP_x=$(tput y): man terminfo
+
+    if [ -f "$HOME/.LESS_TERMCAP" ]; then
+        eval $(dircolors -b $HOME/.LESS_TERMCAP)
+    else
+        if [ -x "$(command -v tput)" ]; then
+            export LESS_TERMCAP_mb=$(tput blink; tput setaf 2)              # begin blink
+            export LESS_TERMCAP_md=$(tput bold; tput setaf 5)               # begin bold
+            export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4) # begin standout mode
+            export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7)    # begin underline
+            export LESS_TERMCAP_me=$(tput sgr0)                 # reset bold/blink
+            export LESS_TERMCAP_se=$(tput rmso; tput sgr0)      # reset standout mode
+            export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)      # reset underline
+            export LESS_TERMCAP_mr=$(tput rev)      # enter reverse video mode
+            export LESS_TERMCAP_mh=$(tput dim)      # turn on half‐bright mode
+            export LESS_TERMCAP_ZN=$(tput ssubm)    # enter subscript mode
+            export LESS_TERMCAP_ZO=$(tput ssupm)    # enter subscript mode
+            export LESS_TERMCAP_ZV=$(tput rsubm)    # end subscript mode
+            export LESS_TERMCAP_ZW=$(tput rsupm)    # end subscript mode
+        else
+            # backup
+            export LESS_TERMCAP_mb=$'\e[1;31m'     # begin blink
+            export LESS_TERMCAP_md=$'\e[1;33m'     # begin bold
+            export LESS_TERMCAP_so=$'\e[01;44;37m' # begin standout mode
+            export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
+            export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
+            export LESS_TERMCAP_se=$'\e[0m'        # reset standout mode
+            export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+        fi
+    fi
 fi
+
+# To have colors for ls and all grep commands such as grep, egrep and zgrep
+export CLICOLOR=1
+
+# For Konsole and Gnome-terminal
+export GROFF_NO_SGR=1
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

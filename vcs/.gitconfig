@@ -10,6 +10,7 @@
 	helper = manager-core
 [alias]
 	browse = !gh repo view --web
+	proper = clean -xdf
 	ci = commit
 	co = checkout
 	cp = cherry-pick
