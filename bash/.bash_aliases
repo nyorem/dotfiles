@@ -64,6 +64,7 @@ alias :wq="exit"
 
 alias python="python3"
 alias py="python3 -i"
+alias venv="source venv/bin/activate"
 
 alias m="make"
 alias maek="make"
@@ -165,6 +166,24 @@ format-all()
   find . -iname *.hpp -o -iname *.cpp | xargs clang-format -i -style=file
 }
 
+# https://github.com/google/googletest/blob/v1.14.0/docs/advanced.md#controlling-how-failures-are-reported
+gtest_enable_error_catching()
+{
+  export GTEST_CATCH_EXCEPTIONS=0
+  export GTEST_BREAK_ON_FAILURE=1
+}
+
+gtest_disable_error_catching()
+{
+  unset GTEST_CATCH_EXCEPTIONS
+  unset GTEST_BREAK_ON_FAILURE
+}
+
+callgrind()
+{
+  valgrind --tool=callgrind --dump-instr=yes --collect-jumps=yes $*
+}
+
 # {{{1 bash stuff
 source ~/.bash_completion.d/complete_alias
 source ~/.bash_completion.d/git-completion
@@ -182,7 +201,7 @@ complete -F _complete_alias gpu
 
 eval "$(fzf --bash)"
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 _fzf_compgen_path() {
@@ -207,7 +226,7 @@ if uname -r | grep -q "microsoft"; then
   PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
 
   explorer() {
-    explorer.exe $(wslpath -w "$1")
+    /mnt/c/Windows/explorer.exe $(wslpath -w "$1")
   }
   alias open="explorer"
   alias o="explorer"
