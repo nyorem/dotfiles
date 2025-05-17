@@ -49,6 +49,11 @@ fi
 if [ -x "$(command -v zoxide)" ]; then
   alias cd="z"
   alias zz="z -"
+
+  function ze() {
+    DIR=$(zoxide query -i "$@")
+    [ -n "$DIR" ] && cd "$DIR" && e .
+  }
 fi
 
 # https://unix.stackexchange.com/questions/162131/is-this-a-good-way-to-create-a-patch
@@ -57,6 +62,9 @@ alias makerdiff="diff -crB"
 alias testpatch="patch -p1 --dry-run"
 
 alias r="fc -s"
+
+alias du="du -h"
+alias free="free -h"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -75,6 +83,7 @@ function mm() {
 # {{{2 git
 alias g="git"
 alias ga="git add"
+alias gap="git add --patch"
 alias gc="git commit"
 alias gst="git status"
 alias gpu="git pull"
@@ -83,6 +92,7 @@ alias gp="git push"
 alias gpf="git push --force-with-lease"
 alias gpff="git push --force"
 alias gd="git diff"
+alias gds="git diff --staged"
 alias gco="git checkout"
 alias gsu="git submodule update --init"
 alias gss="git stash"

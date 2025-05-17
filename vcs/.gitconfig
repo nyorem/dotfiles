@@ -36,14 +36,13 @@
 	work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
 [core]
 	autocrlf = input
-	safecflf = true
-	editor = vim
 [diff]
-	renames = true
+	renames = copies
 	tool = nvimdiff
 [difftool]
 	prompt = false
 [push]
+	autoSetupRemote = true
 	default = current
 [merge]
 	tool = fugitive
@@ -58,6 +57,8 @@
 	cmd = nvim -f -c \"DiffviewOpen\"
 [rebase]
 	autoStash = true
+[status]
+	showStash = true
 [credential]
 	helper = store
 [url "https://aur.archlinux.org/"]
