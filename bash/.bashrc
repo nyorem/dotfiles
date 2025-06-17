@@ -54,7 +54,9 @@ function __prompt_command() {
 	PS1+="${red}[${EXIT}]${reset} "
     fi
 
-    PS1+="${green}\u@\h${reset}:${blue}\w${reset}\$ "
+    PS1+="${green}\u@\h${reset}:${blue}\w${reset}"
+    PS1+="${red}$(__git_ps1 ' (%s)')${reset} "
+    PS1+="\$ "
 
     # Set terminal title
     echo -ne "\e]0;$(basename $PWD)\a"
