@@ -10,6 +10,8 @@ export PATH="$HOME/.config/emacs/bin:$PATH" # Doomemacs
 alias s="sudo apt-get"
 alias ss="sudo apt-get -f"
 
+alias editbash="$EDITOR $HOME/.bash_aliases"
+
 if [ -x "$(command -v nvim)" ]; then
   alias vimdiff="nvim -d"
   export EDITOR="nvim"
@@ -46,6 +48,8 @@ else
   alias la="ls -a"
 fi
 
+alias l="ls"
+
 if [ -x "$(command -v zoxide)" ]; then
   alias cd="z"
   alias zz="z -"
@@ -58,7 +62,7 @@ fi
 
 # https://unix.stackexchange.com/questions/162131/is-this-a-good-way-to-create-a-patch
 alias makediff="diff -Naur"
-alias makerdiff="diff -crB"
+alias makerdiff="diff -ur"
 alias testpatch="patch -p1 --dry-run"
 
 alias r="fc -s"
@@ -74,6 +78,8 @@ alias python="python3"
 alias py="python3 -i"
 alias venv="source venv/bin/activate"
 
+alias hl="rg --passthru"
+
 alias m="make"
 alias maek="make"
 function mm() {
@@ -85,6 +91,7 @@ alias g="git"
 alias ga="git add"
 alias gap="git add --patch"
 alias gc="git commit"
+alias gcl="git clone"
 alias gst="git status"
 alias gpu="git pull"
 alias gpr="git pull --rebase"
@@ -105,6 +112,51 @@ alias tig="tig status"
 if [ -x "$(command -v lazygit)" ]; then
   alias gg="lazygit"
 fi
+
+function git-fat-files() {
+  git rev-list --all --objects | \
+    sed -n $(git rev-list --objects --all | \
+    cut -f1 -d' ' | \
+    git cat-file --batch-check | \
+    grep blob | \
+    sort -n -k 3 | \
+    tail -n40 | \
+    while read hash type size; do 
+         echo -n "-e s/$hash/$size/p ";
+    done) | \
+    sort -n -k1
+}
+
+function git-eradicate() {
+  [ "$#" -ne 1 ] && { echo "Usage: git-eradicate <file>"; return 1; }
+
+  local file="$1"
+  echo "Eradicating $file from git history, are you sure? (y/N)"
+  read answer
+  if [ "$answer" != "y" ]; then
+    echo "Aborting"
+    return
+  fi
+
+  git filter-branch -f  --index-filter \
+    "git rm --force --cached --ignore-unmatch $file" \
+    -- --all
+  rm -Rf .git/refs/original && \
+    git reflog expire --expire=now --all && \
+    git gc --aggressive && \
+    git prune
+}
+
+function git-cleanup-branches() {
+  git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
+}
+
+function git-worktree-switch() {
+  result=$(git worktree list | awk '{print $1}' | fzf --height 40% --reverse)
+  if [ $? -eq 0 ]; then
+    cd "$result"
+  fi
+}
 
 # {{{2 vim
 alias vimgit="vim +G +only"
@@ -189,9 +241,14 @@ gtest_disable_error_catching()
   unset GTEST_BREAK_ON_FAILURE
 }
 
-callgrind()
+profile()
 {
   valgrind --tool=callgrind --dump-instr=yes --collect-jumps=yes $*
+}
+
+profile_custom()
+{
+  valgrind --tool=callgrind --dump-instr=yes --collect-jumps=yes --instr-atstart=no --collect-atstart=no $*
 }
 
 # {{{1 bash stuff
@@ -240,9 +297,12 @@ if uname -r | grep -q "microsoft"; then
   }
   alias open="explorer"
   alias o="explorer"
+  alias clip="/mnt/c/Windows/System32/clip.exe"
 else
   alias clip="xclip -selection clipboard"
 fi
+
+shopt -s autocd
 
 if [ -x "$(command -v zoxide)" ]; then
   eval "$(zoxide init bash)"

@@ -10,7 +10,7 @@
 	helper = manager-core
 [alias]
 	browse = !gh repo view --web
-	proper = clean -xdf
+	proper = clean -df
 	ci = commit
 	co = checkout
 	cp = cherry-pick
@@ -22,6 +22,7 @@
 	drop = reset --hard
 	rr = -c commit.verbose=true rebase
 	ri = rebase -i
+	rrm = rebase --rebase-merges
 	rc = rebase --continue
 	rs = rebase --skip
 	ra = rebase --abort

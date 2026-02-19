@@ -38,7 +38,7 @@ map <c-j> set hidden!
 # see https://github.com/gokcehan/lf/issues/303
 map <c-k> ${{
 #Copy fullpath
-echo -n "$fx" | clip.exe
+echo -n "$fx" | /mnt/c/Windows/System32/clip.exe
 }}
 map <c-n> search-next
 map <c-p> search-prev
